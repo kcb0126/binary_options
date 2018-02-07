@@ -1,0 +1,86 @@
+.border-box-btc {
+    border: 2px solid #484755;
+    background: #fff;
+    box-shadow: 3px 7px 8px #676767e0;
+}
+.box-btc-head {
+    background: #3f3e4e;
+    color: #fff;
+    padding: 10px 0px;
+    text-transform: uppercase;
+    margin: 0px;
+    font-size: 16px;
+}
+.time-left {
+    border-top: 1px solid #3f3e4e;
+    border-bottom: 1px solid #3f3e4e;
+    margin: 0px;
+    padding: 12px 0px;
+    font-size: 18px;
+    color: #000;
+    margin-top: 13px;
+}
+.time-left span {
+    color: #ea3938;
+}
+.view-percent-text p {
+   text-align: center;
+    background: #eff1f0;
+    border: 1px solid #000;
+    border-radius: 3px 3px;
+    margin: 12px auto;
+    padding: 7px 0px;
+    max-width: 83px;
+    font-size: 16px;
+    width: 100%;
+    font-weight: 600;
+
+}
+.view-percent-text img {
+    border-radius: 3px 3px;
+    width: 48%;
+}
+.view-percent-text span {
+    padding-left: 5px;
+}
+.btc-graph-img {
+    width: 83%;
+    margin: 0px auto;
+}
+.btn-visit {
+    background: #3f3e4e;
+    width: 191px;
+    color: #fff;
+    font-size: 20px;
+    padding: 0px;
+    margin: 10px;
+    outline: none;
+    border: 1px solid #000;
+}
+.btn-visit:hover{
+    background: #3f3e4e;
+    box-shadow: 0px 0px;
+    color: #fff;
+    border: 1px solid #000;
+}
+.deposit-sec-padd {
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.eth-asset-padd{
+    margin-top: 20px;
+}
+
+.view-percent-text i {
+    text-align: center;
+    margin: 0px;
+    padding-left:4px;
+}
+.box-btc-head i {
+    padding-left: 4px;
+        margin: 0px 4px;
+}
+.btc-box-sec {
+    margin-bottom: 20px;
+}

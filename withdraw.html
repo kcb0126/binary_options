@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>BTC/ETH</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css" />
+ 
+  <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+  <script src="js/jquery.mobile-1.4.2.min.js"></script>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+
+<!-- container-fluid -->
+<div class="container-fluid">
+    <div class="row">
+    <div class="container">
+
+
+<div class="move-right-position">
+    
+    
+    <div class="topnav" id="myTopnav">
+<img src="image/logo2.png" class="img-responsive header-logo logo">
+<a href="index.html" class="active"><i class="fa fa-home"></i> <span>Home </span></a>
+<a href="dash.html"><i class="fa fa-user"></i>  <span>Profile </span></a>
+<a href="deposit.html"><i class="fa fa-credit-card"></i>  <span>Deposit </span></a>
+<a href=""><i class="fa fa-bank"></i>  <span>Withdraw </span></a>
+<a href="affiliate.html"><i class="fa fa-users"></i>  <span>Affiliate </span></a>
+<a href=""><i class="fa fa-sign-out"></i>  <span>Logout </span></a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction2()">&#9776;</a>
+</div>
+ 
+ 
+    
+    
+  <div class="col-sm-12 col-xs-12 over-padd-btc">
+      <h5 class="text-center dash-head" style="margin-top: 20px; padding-bottom: 10px;">Withdraw</h5>
+  </div>
+    
+    
+    
+
+    <div class="col-md-6 col-sm-6 col-xs-12 over-padd-btc">
+      <div class="col-md-12 col-sm-12 col-xs-12 no-padd live-rate-sec" style="width: 100%;">
+        <h5 class="text-center tab-title" style="color: #fff">Your Bitcoin Wallet</h5>
+        <img src="image/bitc.png" class="img-responsive" style="width: 42%;margin: 0 auto;">
+        <p class="balance-head text-center" style="color: #fff">Balance: 0.011123</p>
+                    <form>
+              <div class="form-group text-center" style="width: 50%; margin: 0 auto;">
+                <input type="text" class="form-control" id="withdrawBTC" placeholder="Amount to Withdraw">
+                </div>
+          </form>
+        <button class="tab-button" data-toggle="modal" data-target="#bitcoin_modal">Withdraw Bitcoin</button>
+      </div>
+    </div>
+    
+    
+      <div class="col-md-6 col-sm-6 col-xs-12 over-padd-btc">
+      <div class="col-md-12 col-sm-12 col-xs-12 no-padd live-rate-sec" style="width: 100%;">
+        <h5 class="text-center tab-title" style="color: #fff">Your Ethereum Wallet</h5>
+        <img src="image/ethereum.png" class="img-responsive" style="width: 42%;margin: 0 auto;">
+         <p class="balance-head text-center" style="color: #fff">Balance: 0.011123</p>
+          <form>
+              <div class="form-group text-center" style="width: 50%; margin: 0 auto;">
+                <input type="text" class="form-control" id="withdrawETH" placeholder="Amount to Withdraw">
+                </div>
+          </form>
+        <button class="tab-button">Withdraw Ethereum</button>
+      </div>
+    </div>
+
+    
+    
+    
+   <div class="col-sm-12 col-xs-12 over-padd-btc">
+      <h5 class="text-center dash-head" style="margin-top: 20px; padding-bottom: 10px;">Transactions</h5>
+  </div>
+    
+       <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="col-sm-12 col-xs-12">
+      <h5 class="text-center table-head" style="margin-top: 10px; padding-bottom: 10px; margin-bottom: 0px;">Bitcoin Transactions</h5>
+    </div>
+
+    <div class="col-sm-12 col-xs-12 tab-content between-marg-sec">
+        <div class="tab-pane active">
+    <table class="table table-trader table-striped table-hover" style="background: #3f3e4e;">
+
+    <tr class="content-table-sec">
+    <th class="col-sm-2 no-padd">ID</th>
+    <th class="col-sm-2 no-padd">Date</th>
+    <th class="col-sm-2 no-padd">Amount</th>
+    <th class="col-sm-2 no-padd">Status</th>
+    <th class="col-sm-2 no-padd">Transaction ID</th>
+    </tr>
+
+    <tr class="content-table-sec change-color">
+    <td class="col-sm-2 no-padd">103212</td>
+    <td class="col-sm-2 no-padd">11-01-2018</td>
+    <td class="col-sm-2 no-padd">0.0123</td>
+    <td class="col-sm-2 no-padd">pending</td>
+    <td class="col-sm-2 no-padd"> 9ew3ur9fh32jhfu43h78f3h8fd3he8edf</td>
+    </tr>
+        
+        <tr class="content-table-sec change-color">
+    <td class="col-sm-2 no-padd">103212</td>
+    <td class="col-sm-2 no-padd">11-01-2018</td>
+            <td class="col-sm-2 no-padd">0.0123</td>
+    <td class="col-sm-2 no-padd">pending</td>
+    <td class="col-sm-2 no-padd"> 9ew3ur9fh32jhfu43h78f3h8fd3he8edf</td>
+    </tr>
+        
+        <tr class="content-table-sec change-color">
+    <td class="col-sm-2 no-padd">103212</td>
+    <td class="col-sm-2 no-padd">11-01-2018</td>
+            <td class="col-sm-2 no-padd">0.0123</td>
+    <td class="col-sm-2 no-padd">pending</td>
+    <td class="col-sm-2 no-padd"> 9ew3ur9fh32jhfu43h78f3h8fd3he8edf</td>
+    </tr>
+        
+        <tr class="content-table-sec change-color">
+    <td class="col-sm-2 no-padd">103212</td>
+    <td class="col-sm-2 no-padd">11-01-2018</td>
+            <td class="col-sm-2 no-padd">0.01233456</td>
+    <td class="col-sm-2 no-padd">pending</td>
+    <td class="col-sm-2 no-padd"> 9ew3ur9fh32jhfu43h78f3h8fd3he8edf</td>
+    </tr>
+        
+        <tr class="content-table-sec change-color">
+    <td class="col-sm-2 no-padd">103212</td>
+    <td class="col-sm-2 no-padd">11-01-2018</td>
+            <td class="col-sm-2 no-padd">0.0123</td>
+    <td class="col-sm-2 no-padd">pending</td>
+    <td class="col-sm-2 no-padd"> 9ew3ur9fh32jhfu43h78f3h8fd3he8edf</td>
+    </tr>
+
+    </table>
+    </div>
+
+</div>
+    </div>
+    
+    
+  <div class="col-md-6 col-sm-6 col-xs-12">
+      <div class="col-sm-12 col-xs-12">
+      <h5 class="text-center table-head" style="margin-top: 10px; margin-bottom: 0px;">Ethereum Transactions</h5>
+    </div>
+
+<div class="col-sm-12 col-xs-12 tab-conten">
+        <div class="tab-pane active">
+    <table class="table table-trader table-striped table-hover" style="background: #3f3e4e;">
+
+    <tr class="content-table-sec">
+    <th class="col-sm-2 no-padd">ID</th>
+    <th class="col-sm-2 no-padd">Date</th>
+         <th class="col-sm-2 no-padd">Amount</th>
+    <th class="col-sm-2 no-padd">Status</th>
+    <th class="col-sm-2 no-padd">Transaction ID</th>
+    </tr>
+
+    <tr class="content-table-sec change-color">
+    <td class="col-sm-2 no-padd">103212</td>
+    <td class="col-sm-2 no-padd">11-01-2018</td>
+    <td class="col-sm-2 no-padd">0.0123</td>
+    <td class="col-sm-2 no-padd">pending</td>
+    <td class="col-sm-2 no-padd"> 9ew3ur9fh32jhfu43h78f3h8fd3he8edf</td>
+    </tr>
+        
+        <tr class="content-table-sec change-color">
+    <td class="col-sm-2 no-padd">103212</td>
+    <td class="col-sm-2 no-padd">11-01-2018</td>
+    <td class="col-sm-2 no-padd">0.0123</td>
+    <td class="col-sm-2 no-padd">pending</td>
+    <td class="col-sm-2 no-padd"> 9ew3ur9fh32jhfu43h78f3h8fd3he8edf</td>
+    </tr>
+        
+        <tr class="content-table-sec change-color">
+    <td class="col-sm-2 no-padd">103212</td>
+    <td class="col-sm-2 no-padd">11-01-2018</td>
+    <td class="col-sm-2 no-padd">0.0123</td>
+    <td class="col-sm-2 no-padd">pending</td>
+    <td class="col-sm-2 no-padd"> 9ew3ur9fh32jhfu43h78f3h8fd3he8edf</td>
+    </tr>
+
+    </table>
+    </div>
+
+</div>
+    </div>
+    
+</div>
+
+  </div>
+</div>
+<!-- container-fluid -->
+
+
+
+
+</body>
+</html>
+
+
+
+ <!-- Modal -->
+  <div class="modal fade" id="bitcoin_modal" role="dialog">
+    <div class="modal-dialog modal-sm bitcoin-modal">
+    
+      <!-- Modal content-->
+      <div class="modal-content myfirst-modal">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Your Bitcoin Address</h4>
+        </div>
+        <div class="modal-body text-center bitcoin-modal-content">
+            <img src="image/chart.png" class="img-responsive">
+          <p id="p1">1xTc01n2B1tCQlN3b1xc01N4b1TCon5b</p>
+          <a href="javascript:void(0)" class="btn btn-copy" onclick="copyToClipboard('#p1')">COPY</a>
+        </div>
+       
+      </div>
+      
+    </div>
+  </div>
+
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<script>
+function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+</script>
+
+
+<script>
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+  <script type="text/javascript">
+  
+      $(document).ready(function(){
+          $('.click-bar').click(function(){
+              $('.menu-header').slideToggle();
+          });
+      });    
+
+  </script>
+  
+  
+  <script>
+  
+      var rightJS = {
+  init: function(){
+    rightJS.Tags = document.querySelectorAll('.rightJS');
+    for(var i = 0; i < rightJS.Tags.length; i++){
+      rightJS.Tags[i].style.overflow = 'hidden';
+    }
+    rightJS.Tags = document.querySelectorAll('.rightJS div');
+    for(var i = 0; i < rightJS.Tags.length; i++){
+      rightJS.Tags[i].style.position = 'relative';
+      rightJS.Tags[i].style.right = '-'+rightJS.Tags[i].parentElement.offsetWidth+'px';
+    }
+    rightJS.loop();
+  },
+  loop: function(){
+    for(var i = 0; i < rightJS.Tags.length; i++){
+      var x = parseFloat(rightJS.Tags[i].style.right);
+      x ++;
+      var W = rightJS.Tags[i].parentElement.offsetWidth;
+      var w = rightJS.Tags[i].offsetWidth;
+      if((x/100) * W  > w) x = -W;
+      rightJS.Tags[i].style.right = x + 'px';
+    } 
+    requestAnimationFrame(this.loop.bind(this));
+  }
+};
+window.addEventListener('load',rightJS.init);
+
+/* JQUERY */
+
+$(function(){
+  var rightJQ = {
+    init: function(){
+    $('.rightJQ').css({
+        overflow: 'hidden'
+      });
+      rightJQ.loop();
+    },
+    loop: function(){
+      $('.rightJQ div').css({
+        position: 'relative',
+        right: '-100%'
+      }).animate({
+        right: '100%'
+      }, 15000, 'linear' );
+      setTimeout(rightJQ.loop, 15010);
+    }
+  };
+  rightJQ.init();
+});
+  
+      
+      
+  </script>
+    
+    <script>
+/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction2() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>

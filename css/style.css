@@ -1,0 +1,1297 @@
+body{
+    font-family: 'Open Sans', sans-serif !important;
+    background: #424242 !important;
+}
+html {
+    background: #424242;
+}
+p{
+	 font-family: 'Open Sans', sans-serif !important;
+}
+ul,li{
+	 font-family: 'Open Sans', sans-serif !important;
+}
+h1,h2,h3,h4,h5,h6{
+	 font-family: 'Open Sans', sans-serif !important;
+}
+a{
+	 font-family: 'Open Sans', sans-serif !important;
+}
+span{
+	 font-family: 'Open Sans', sans-serif !important;
+}
+input{
+    font-family: 'Open Sans', sans-serif;
+}
+.no-padd{
+	padding: 0px;
+}
+
+.box-home {
+    padding: 1px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px
+}
+
+.alert-box {
+    color: #fff;
+    background-color: #303030;
+    border-color: #fff;
+    height: 113px
+}
+
+.pairs-box {
+    color: #fff;
+    background-color: #303030;
+    border-color: #fff;
+    height: 70px;
+    padding-right: 10px;
+    padding-left: 10px
+}
+
+
+.carousel-control {
+  padding-top: 10px;
+  width:8%;
+    height: 100%;
+    color: #fff !important;
+    font-size: 80px !important
+}
+
+
+/* Start Dash.php */
+.border-box-btc {
+    border: 0px solid #000;
+    background: #303030;
+    box-shadow: 3px 7px 8px #676767e0;
+    border-radius: 5px 5px 0px 0px;
+    margin-bottom: 20px;
+    margin-top: 30px
+    
+}
+
+.box-btc-head {
+    background: #303030;
+    color: #fff;
+    padding: 10px 0px;
+    text-transform: uppercase;
+    margin: 0px;
+    font-size: 16px;
+    border-radius: 5px 5px 0px 0px;
+    border-bottom: 1px solid #fff;
+}
+
+.btn-visit {
+    background: #000;
+    width: 191px;
+    color: #fff;
+    font-size: 20px;
+    padding: 0px;
+    margin: 10px;
+    outline: none;
+    border: 1px solid #fff;
+}
+
+.btn-visit:hover {
+    background-color: #424242;
+    color: #fff !important;
+}
+
+
+.view-percent-text p {
+   text-align: center;
+    background: #000;
+    border: 1px solid #fff;
+    border-radius: 3px 3px;
+    margin: 12px auto;
+    padding: 7px 0px;
+    max-width: 83px;
+    font-size: 16px;
+    width: 100%;
+    font-weight: 600;
+
+}
+
+
+.btc-graph-img {
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+/*    margin-left: 25%;*/
+
+}
+
+
+
+.time-left {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    margin: 0px;
+    padding: 12px 0px;
+    font-size: 18px;
+    color: #fff;
+    margin-top: 13px;
+}
+.time-left span {
+    color: #ea3938;
+}
+
+
+.dash-head { 
+    border-bottom: 1px solid #fff;
+    border-radius: 5px 5px 0px 0px;
+    color: #fff;    
+    font-size: 16px;    
+    text-transform: capitalize;    
+    margin-bottom: 16px;    
+    font-weight: 900;    
+    background: #000;    
+    padding: 10px;    
+    width: 100%;   
+    height: 30px;
+    margin: 8px auto;    
+    margin-top: 0px;
+}
+
+.dash-box {   
+    border-radius: 5px 5px 0px 0px;
+    background: #000;    
+    padding: 0px 0px;    
+    margin-top: 30px;    
+    padding-bottom: 0px;    
+    box-shadow: 3px 5px 10px #848181c7;
+}
+
+
+/* finish Dash.php */
+
+
+/* start deposit.php */
+.live-rate-sec .tab-button{
+    width: 50%;
+    background: #3f3e4e !important;
+    color: #fff !important;
+    box-shadow: none !important;
+    text-shadow: 0px 0px !important;
+    border: 1px solid #3f3e4e;
+    margin: 0px auto 0px auto;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.table-trader {
+        margin: 0px;
+        box-shadow: 2px 4px 9px 2px #a6a5a5;
+}
+
+.content-table-sec th {
+    color: #fff;
+    text-align: center;
+    font-size: 13px;
+    border: 0px solid #ffffffcf;
+    background: #3c78da;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+.change-color td {
+/*    background: #fff;*/
+    color: #000;
+/*    border-bottom: 1px solid #a5a5a5 !important;*/
+    border: 0px solid #fff;
+        padding: 5px !important;
+       font-weight: 300;
+          text-align: center;
+          font-size:13.5px;
+
+}
+
+.content-table-sec th{
+      background: #000;
+    }
+
+
+.table-head { 
+    border-bottom: 1px solid #fff;
+    border-radius: 5px 5px 0px 0px;
+    color: #fff;    
+    font-size: 16px;    
+    text-transform: capitalize;    
+    margin-bottom: 16px;    
+    font-weight: 900;    
+    background: #000;    
+    padding: 10px;    
+    width: 100%;   
+    height: 30px;
+    margin: 0x auto;    
+    margin-top: 0px;}
+
+
+/* finish deposit.php */
+
+
+/* start affiliate.php */
+
+.btn-affiliate-list h3 {
+    margin: 0px;
+    background: #3f3e4e;
+    border:1px solid #3f3e4e;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 300;
+    padding: 10px 0px;
+}
+.btn-affiliate-list {
+    padding: 0px 5px;
+}
+.current-month-padd {
+    margin-top: 7px;
+    margin-bottom: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.chart {
+  width: 100%; 
+  min-height: 279px;
+}
+.vector-graph-sec {
+    border-left: 0px;
+    border-top: 0px;
+    box-shadow: 5px 6px 10px #ababab;
+    background: #000;
+}
+.commision-img-sec {
+    
+    border-top: 0px;
+    padding: 10px;
+    height: 280px !important;
+    background: #000;
+        box-shadow: -4px 5px 9px #989898;
+}
+
+.graph-commision-padd {
+    padding-left: 25px;
+    padding-right: 26px;
+    padding-bottom: 15px;
+        margin-top: -1px;
+}
+.commision-img-sec img {
+    padding-top: 4%;
+}
+.affiliate-wining-text {
+    background: #3f3e4e;
+    padding: 16px 10px;
+    margin-top: 10px;
+    height: 170px;
+    text-align: center;
+        box-shadow: 1px 3px 10px #4a4747;
+    border: 3px solid #000;
+}
+.affiliate-wining-text h3 {
+    color: #fff;
+    font-size: 1.6vmax;
+    padding-top: 19px;
+}
+.btn-affiliate-list {
+    color: #fff;
+    text-align: center;
+}
+.btn-affiliate-list a{
+    color: #fff;
+    background: #3f3e4e;
+    border-radius: 0px 0px !important;
+    border:1px solid #3f3e4e;
+
+}
+.btn-affiliate-list a:hover,.btn-affiliate-list a:active,.btn-affiliate-list a:focus{
+    color: #fff !important;
+    background: #3f3e4e !important;
+    border:1px solid #3f3e4e !important;
+}
+.active.btn-affiliate-list a{
+    color: #fff !important;
+    background: #3f3e4e !important;
+    border-radius: 0px 0px !important;
+    border:1px solid #3f3e4e !important;
+
+}
+.btn-affiliate-list span{
+    border-bottom: 1px solid #3f3e4e !important;
+        width: 90%;
+    color: #fff;
+    border-radius: 0px 0px;
+        font-size: 16px;
+    padding: 0px;
+}
+.btn-affiliate-list span:hover{
+    border-bottom: 1px solid #fff !important;
+    color:#fff !important;
+}
+
+/* finish affiliate.php */
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+     color: #fff !important;
+    
+}
+
+/* Style the links inside the navigation bar */
+.topnav img {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #424242;
+    color: #333 !important;
+}
+
+
+/* Add an active class to highlight the current page */
+.logo {
+    padding: 0px 0px;
+    
+}
+
+/* Add an active class to highlight the current page */
+.active {
+    background-color: #424242;
+     color: #333 !important;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+    display: none;
+}
+
+
+
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+
+
+
+.left-bg-header{
+	background: #262626;
+	padding-right:0%;
+	padding-left: 0%;
+	padding-top: 0px;
+    margin-top: 24px;
+	padding-bottom: 20px;
+	/*min-height: 646px;*/
+    min-height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 180px;
+    top: 0;
+    z-index: 1;
+}
+
+
+.move-right-position {
+    margin-left: 0px;
+}
+
+.btn-chart{
+    background: #57C059;
+    color: #fff !important;
+    font-size: 16px;
+    width: 50px;
+    height: 42px;
+    outline: none;
+    text-shadow: 0px 0px !important;
+    text-align: center;
+    font-weight: 500 !important;
+    padding: 4px 10px;
+    box-shadow: 0px 0px;
+    border: 0px solid #000;
+    border-radius: 5px;
+    line-height: 30px;
+}
+
+.btn-chart:hover,.btn-chart:active,.btn-chart:focus{
+	 background: #92c47d;
+    color: #fff;
+    box-shadow: 0px 0px;
+}
+
+.button-wrapper .btn-chart{
+    
+    margin-top: 5px;
+}
+
+
+
+.live-tools {   
+    border-radius: 5px 5px 0px 0px;
+    background: #000;    
+    padding: 0px 0px;    
+    margin-bottom: 8px;    
+    margin-top: 10px;    
+    padding-bottom: 0px;    
+    box-shadow: 3px 5px 10px #848181c7;}
+
+.chart-container {
+    border-radius: 5px 5px 0px 0px;
+    margin-top: 10px;
+    background: #000;
+    border: 1px solid #a6a6a6;
+    padding-bottom: 15px;
+    box-shadow: 1px 2px 6px 2px #9f9f9f;
+    height: 388px;
+}
+
+.box {
+	display:table-cell;
+	vertical-align:top;
+	background:#000;
+	color:#fff;
+}
+
+.container {
+    max-width: 1800px !important;
+    width: 100%;
+    padding: 0px;
+    background: #424242;
+}
+
+.header-logo {    
+    padding-bottom: -0px;
+    height: 48px !important;
+    padding-right: 0%;
+}
+.menu-head{
+	border-bottom: 2px solid #6d9fe8;
+	padding-bottom: 5px;
+	color: #6d9fe8;
+	text-transform: capitalize;
+	text-align: center;
+	font-size: 24px;
+}
+.menu-header{
+	padding: 0px;
+	margin:0px 0px;
+	width: 100%;
+	float:left;
+}
+.menu-header li{
+    border-bottom: 1px solid #fff;
+	float: left;
+	width: 100%;
+	margin: 0px;
+    padding: 7px 2px 7px 9px;
+    list-style: none;
+}
+.menu-header li img {
+    width: 12%;
+}
+.menu-header li i {
+        width: 12%;
+}
+
+.menu-header li a{
+	color: #fff !important;
+  font-size: 14px;
+    font-weight: 100;
+    text-decoration: none;
+}
+.menu-header li a:hover{
+	color: #6d9fe8 !important;
+}	
+.menu-header span {
+    padding-left: 8px;
+}
+
+.pairs-head{
+	color: #719be3;
+	border-bottom: 2px solid #719be3;
+	padding-bottom: 5px;
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+	text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.binary-option-list{
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+	float:left;
+}
+
+.binary-option-list li{
+	width: 100%;
+	float: left;
+	margin: 0px;
+    padding: 16px 19px 16px 4px;
+    border-bottom: 2px solid #4679d4;
+}
+.binary-option-list li h3{
+	color: #fff;
+	margin: 0px;
+	text-transform: uppercase;
+	font-size: 18px;
+}
+.binary-option-list .binary{
+	color: #333;
+	font-size: 14px;
+	float: right;
+}
+.binary-option-list .binary img {
+    width: 13px;
+    margin-right: 7px;
+    position: relative;
+    top: -1px;
+}
+
+.right-side-header{
+    background: #424242;
+	padding-left: 30px;
+	padding-right: 20px;
+	padding-top: 0px;
+    padding-bottom: 0px;
+ 
+    min-height: 100vh;
+
+}
+.btc-eth-head{
+	color: #267fff;
+    text-align: center;
+    margin: 0px;
+    font-size: 35px;
+    letter-spacing: 1px;
+}
+/*.rate-head {*/
+/*    color: #fff;*/
+/*    font-size: 16px;*/
+/*    text-transform: uppercase;*/
+/*    margin-bottom: 16px;*/
+/*    font-weight: 300;*/
+/*    background: #3c78da;*/
+/*    padding: 10px;*/
+/*    width: 100%;*/
+/*    margin: 0px 0px 15px auto;*/
+/*}*/
+.rate-head { 
+    border-bottom: 1px solid #E5E8F2;
+    border-radius: 5px 5px 0px 0px;
+    color: #fff;    
+    font-size: 16px;    
+    text-transform: capitalize;    
+    text-align: left;
+    margin-bottom: 16px;    
+    font-weight: 900;    
+    background: #000;    
+    padding: 10px;    
+    width: 100%;   
+    height: 30px;
+    margin: 8px auto;    
+    margin-top: 0px;}
+.local-text p {
+   color: #333;
+    text-align: center;
+    font-size: 15px;
+     text-transform: uppercase;
+     margin: 0px;
+}
+.binary-progress {
+    background: #f27271;
+    height: 15px;
+       border-radius: 2px 2px;
+     margin: 0px;
+      margin-top: 13px;
+    border: 1px solid #000;
+        /* -webkit-animation: progress-bar-stripes 2s linear infinite; */
+    -moz-animation: progress-bar-stripes 2s linear infinite;
+    /* animation: progress-bar-stripes 2s linear infinite; */
+    /* -webkit-animation: progress-bar-stripes 2s linear infinite; */
+    -o-animation: progress-bar-stripes 2s linear infinite;
+    /* animation: progress-bar-stripes 2s linear infinite; */
+    background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    -webkit-background-size: 40px 40px;
+    background-size: 40px 40px;
+}
+.binary-progress .progress-bar {
+    background-color: #92c47d;
+}
+.time-balance-list{
+	padding:0px;
+    margin: 3px 0px 0px;
+	width: 100%;
+	float: left;
+}
+.time-balance-list li{
+	float: left;
+	width: 100%;
+	list-style: none;
+    padding: 14px 20px 14px 6px;
+    border-bottom: 1px solid #E5E8F2;
+}
+.time-balance-list li h4{
+	color: #fff;
+	    text-transform: capitalize;
+    font-size: 15px;
+    margin: 0px;
+    font-weight: 400;
+}
+.time-balance-list li span{
+	float: right;
+}
+
+.time-sec-head {
+    text-align: center;
+    background: #3f3e4e;
+    color: #fff;
+    padding: 12px 0px;
+    border: 2px solid #000;
+    font-size: 15px;
+        box-shadow: 3px 4px 10px #777575;
+}
+.time-world {
+    color: #f27271;
+    letter-spacing: 0.5px;
+    text-shadow: 0px 0px !important;
+}
+.time-balance-list li img {
+    width: 18px;
+    float: left;
+    margin-right: 3px;
+}
+.more-padd {
+    padding: 6px 14px;
+}
+
+.time-left-padd {
+    padding-left: 13px;
+    padding-right: 13px;
+}
+
+
+.notes-board {
+    color: #000;
+    border-radius: 5px 5px 0px 0px;
+    font-size: 15px;
+    font-weight: 900; 
+    background: #F1F6FC;
+    padding: 10px;
+    box-shadow: 1px 1px 9px 3px #ababab;
+    margin-top: 30px;
+}
+.heading-trader {
+    border: 1px solid #ffffffcf;
+        background: #130b30;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #fff;
+    padding: 12px 0px 10px;
+    margin: 0px;
+    border-bottom: 0px;
+}
+.heading-trader h4 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #fff;
+    width: 85%;
+    margin: 0px auto;
+    border-bottom: 2px solid #130b30;
+    padding-bottom: 4px;
+}
+.heading-trader h4:hover{
+	border-bottom: 2px solid #f6eca5;
+}
+.heading-trader a {
+    color: #fff;
+    font-weight: 300;
+    text-decoration: none;
+}
+.heading-trader a:hover,.heading-trader a:active{
+    color: #fff;
+}
+.table-trader {
+        box-shadow: 0px 3px 7px #a6a5a5;
+        margin: 0px;
+        box-shadow: 0px 3px 7px #a6a5a5;
+}
+
+
+.content-table-sec th {
+    color: #fff;
+    text-align: center;
+    font-size: 13px;
+    border: 0px solid #fff;
+    background: #000;
+    font-weight: 900;
+    text-transform: capitalize;
+}
+.change-color td {
+    background: #212529;
+    color: #fff;
+/*    border-bottom: 1px solid #E5E8F2 !important;*/
+    border: 0px solid #fff;
+        padding: 5px !important;
+       font-weight: 300;
+          text-align: center;
+          font-size:13.5px;
+
+}
+.content-table-sec img {
+    width: 15px;
+    position: relative;
+    top: -2px;
+    margin-right: 10px;
+}
+.digital-clock {
+    margin: auto;
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: #000000;
+    text-align: center;
+    font-size: 15px;
+    float: left;
+    border-right: 1px solid #000;
+    padding-right: 5px;
+    width: 64px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+
+
+.expire-head h4 {
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 900;  
+    margin: 0px;
+    padding-top: 3px;
+    
+}
+.clock-sec-value img {
+    width: 17px;
+    float: right;
+    padding-top: 3px;
+}
+.clock-sec-value {
+    background: #ffffff;
+     padding: 0px;
+    border: 1px solid #000;
+    float: right;
+    width: 104px;
+}
+.all-data-padd {
+    border-radius: 5px 5px 0px 0px;
+    margin-top: 10px;
+    background: #000;
+    border: 1px solid #a6a6a6;
+    padding-bottom: 15px;
+    box-shadow: 1px 2px 6px 2px #9f9f9f;
+    height: 388px;
+}
+
+.timer-bg-box {
+    border-bottom: 1px solid #E5E8F2;
+    background: #000;
+    border-radius: 5px 5px 0px 0px;
+    padding: 10px 7px;
+}
+.main-padd-left {
+    padding: 0px 10px;
+}
+.btn-buy {
+    background: #57C059;
+    color: #fff !important;
+    font-size: 18px;
+    text-transform: capitalize;
+    width: 100%;
+    outline: none;
+    text-shadow: 0px 0px !important;
+    font-weight: 500 !important;
+    padding: 4px 10px;
+    box-shadow: 0px 0px;
+    border: 0px solid #000;
+    border-radius: 5px;
+}
+.btn-buy:hover,.btn-buy:active,.btn-buy:focus{
+	 background: #92c47d;
+    color: #fff;
+    box-shadow: 0px 0px;
+}
+.binary-service img {
+    width: 22px;
+    float: left;
+    padding-top: 7px;
+}
+.btn-sell {
+    background: #F45C63;
+    color: #fff !important;
+    text-shadow: 0px 0px !important;
+    font-weight: 500 !important;
+    font-size: 18px;
+    text-transform: capitalize;
+    width: 100%;
+    border: 0px solid #000;
+    outline: none;
+    padding: 4px 10px;
+    box-shadow: 0px 0px;
+    border-radius: 5px;
+}
+.btn-sell:hover,.btn-sell:active,.btn-sell:focus{
+	    background: #e06665;
+    color: #fff;
+    border-radius: 5px;
+}
+.binary-service {
+       padding: 0px 4px 0px 3px;
+    
+}
+.btc-padd-marg {
+    padding-left: 0.5%;
+}
+.btc-value-input {
+    width: 100% !important;
+    color: #000 !important;
+    padding: 4px 6px !important;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    outline: none !important;
+    margin-top: 13px !important;
+    border: 2px solid #E5E8F2 !important;
+}
+
+/*.range-slider input#slider {
+    display: none;
+}*/
+.range-slider .ui-slider-track.ui-shadow-inset {
+    width: 70%;
+    float: left;
+    margin: 0px;
+    background: #c9ced1;
+    height: 6px;
+    border-radius: 0px;
+    border: 0px;
+}
+.range-slider a.ui-slider-handle.ui-btn.ui-shadow {
+    background: #474758;
+    border: 1px solid #000;
+    border-radius: 50% 50%;
+    width: 16px;
+    height: 16px;
+    top: 10px;
+    margin-left: -3px;
+}
+.range-slider a.ui-slider-handle.ui-btn.ui-shadow:hover,.range-slider a.ui-slider-handle.ui-btn.ui-shadow:active,.range-slider a.ui-slider-handle.ui-btn.ui-shadow:focus{
+	box-shadow: 0px 0px;
+}
+.range-slider .ui-slider-bg.ui-btn-active {
+       background: #474758 !important;
+}
+.ui-input-text.ui-body-inherit.ui-corner-all.ui-shadow-inset {
+    border-radius: 10px;
+    box-shadow: 0px 0px;
+    border: 0px;
+}
+div.ui-slider{
+	margin: 0px !important;
+}
+#slider-label {
+    font-size: 16px;
+    float: left;
+    width: 14%;
+}
+.decimal-number{
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+	float:left;
+}
+.decimal-number li {
+    float: left;
+    margin: 0px;
+    list-style: none;
+    text-shadow: 0px 0px;
+    color: #fff;
+    font-size: 7.2px;
+    padding: 0px 1.9px;
+}
+.min-padd{
+	margin-top: 3px;
+        padding-left: 10px;
+    padding-right: 10px;
+}
+.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper {
+    background:none !important;
+    border-color: #bbb;
+    color: #333;
+    text-shadow: 0px 0px  !important;
+}
+.range-slider {
+    padding-left: 1px;
+    padding-right: 5px;
+}
+.chart-binary {
+    margin-top: 25px;
+    margin-bottom: 30px;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+rect.highcharts-background {
+   fill: #041121 !important;
+}
+path.highcharts-grid-line {
+    stroke: #ffffff38;
+}
+path.highcharts-point {
+    display: none;
+}
+path.highcharts-area {
+    display: none;
+}
+div#chart-group {
+    width: 100% !important;
+    min-width: 100% !important;
+    height: 316px !important;
+}
+div#highcharts-ivhwsp5-0 {
+    width: 100% !important;
+}
+path.highcharts-graph {
+    stroke: #417568;
+}
+path.highcharts-axis-line {
+    stroke: #f0f0f000;
+}
+path.highcharts-tick {
+    stroke: #ffffff29;
+}
+.footer-sec-table {
+    margin-top: 7px;
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #424242}
+
+.show {display:block;}
+
+.point-drop .dropbtn {
+    border: 0px !important;
+    margin: 0px;
+    padding: 16px 15px 5px;
+    text-align: center !important;
+    box-shadow: 0px 0px !important;
+    background: url(../image/black-arrow.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: 10px 2px !important;
+    background-color: #cfe2f3 !important;
+    background-size: 18px !important;
+    height: 0px !important;
+    border-radius: 0px !important;
+
+}
+
+.point-drop .dropbtn:hover,.point-drop .dropbtn:active,.point-drop .dropbtn:focus{
+    border: 0px !important;
+    margin: 0px;
+    padding: 16px 15px 5px;
+    text-align: center !important;
+    box-shadow: 0px 0px !important;
+    background: url(../image/black-arrow.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: 10px 2px !important;
+    background-color: #cfe2f3 !important;
+    background-size: 18px !important;
+    height: 0px !important;
+    border-radius: 0px !important;
+}
+.point-drop {
+    padding: 0px !important;
+    width: 38px;
+    height: 18px;
+}
+.drop-menu-item {
+    right: -1px;
+    background: #cfe2f3;
+    min-width: 104px;
+    top: 22px;
+}
+.drop-menu-item a {
+    font-weight: 300 !important;
+    color: #073863 !important;
+    background: #cfe2f3;
+}
+.drop-menu-item a:hover {
+    background: #92c47d;
+    color: #073863;
+}
+.volume-type-slide {
+    position: relative;
+    border: 0px !important;
+    box-shadow: 0px 0px !important;
+    font-size: 17px !important;
+    float: left !important;
+    width: 13% !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    text-align: left !important;
+    padding-left: 5px !important;
+}
+.click-bar {
+    float: right;
+    padding: 13px;
+    font-size: 29px;
+    color: #fff !important;
+}
+
+
+.open-trader-head {
+    border-radius: 5px 5px 0px 0px;
+    background: #000;
+    color: #fff;
+    padding: 11px;
+    text-transform: capitalize; 
+    font-weight: 900;
+    font-size: 16px;
+    margin: 0px;
+    box-shadow: 3px 5px 10px #848181c7
+}
+.open-trader-padd {
+    padding-right: 0px;
+    margin-top: 20px;
+   
+
+}
+.trade-history-pad {
+    padding-left: 0px;
+    margin-top: 40px;
+
+}
+.table-striped>tbody>tr:nth-of-type(odd) td {
+    background-color: #32383e;
+}
+.binary-right-position{
+    padding: 13px 17px;
+    width:100%;
+    float: left;
+    margin: 0px;
+}
+.binary-right-position li{
+    list-style: none;
+    float: left;
+    width: 175px;
+}
+.binary-right-position li h3 {
+    color: #000;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin: 0px;
+        font-weight: 400;
+}
+.binary-right-position li .binary {
+    font-size: 14px;
+        margin-left: 5%;
+}
+.binary img {
+     width: 12px;
+    margin: 0px 3px 0px 0px;
+    position: relative;
+    top: -1px;
+}
+  
+.bg-binary-option {
+    padding: 0px 2px;
+    background: #000;
+    border: 1px solid #E5E8F2;
+}
+
+i.fa-caret-up {
+    color: #92c47d;
+    margin: 0px 6px 0px 0px;
+        font-size: 16px !important;
+            font-weight: 600;
+}
+i.fa-caret-down {
+    color: #e06665;
+    margin: 0px 6px 0px 0px;
+    font-size: 16px !important;
+        font-weight: 600;
+}
+/*.live-rate-sec {*/
+/*    background: #fff;*/
+/*    padding: 0px;*/
+/*    margin-bottom:10px;*/
+/*    margin-top: 8px;*/
+/*    padding-bottom: 10px;*/
+/*    box-shadow: 0px 3px 10px 3px #797676ba;*/
+/*}*/
+
+.live-rate-sec {   
+    border-radius: 5px 5px 0px 0px;
+    background: #000;    
+    padding: 0px 0px;    
+    margin-bottom: 10px;    
+    margin-top: 10px;    
+    padding-bottom: 10px;    
+    box-shadow: 3px 5px 10px #848181c7;}
+.over-padd-btc {
+    padding: 0px 25px;
+}
+
+
+
+.live-pairs {   
+    border-radius: 5px 5px 0px 0px;
+    background: #000;    
+    padding: 0px 0px;    
+    margin-bottom: 8px;    
+    margin-top: 30px;    
+    padding-bottom: 0px;    
+    box-shadow: 3px 5px 10px #848181c7;}
+
+
+ @media only screen and (max-width : 1024px) {
+.content-table-sec th {
+    font-size: 1.2vmin;
+}
+.content-table-sec td {
+    font-size: 1.2vmin;
+}
+}
+
+
+
+@media only screen and (max-width : 800px) {
+
+
+}
+
+
+
+
+ @media only screen and (max-width : 540px) {
+
+.left-bg-header {
+    min-height: 100%;
+    max-width: 100%;
+    width: 100%;
+    position: relative;
+     border: 0px solid #161d15; 
+}
+.right-side-header {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.menu-header{
+    display: none;
+}
+.binary-right-position li {
+    width: 50%;
+    margin-bottom: 32px;
+}
+.trade-history-pad {
+    padding-left: 0%;
+    margin-top: 20px;
+}
+.open-trader-padd {
+     padding-right: 0%; 
+     margin-bottom: 20px;    
+     margin-top: 30px;
+}
+.content-table-sec th {
+    font-size: 2vmin;
+}
+.content-table-sec td {
+    font-size: 2vmin;
+}
+.menu-header li a {
+    font-size: 4vmin;
+}
+.move-right-position {
+    margin-left: 0px;
+}
+    }

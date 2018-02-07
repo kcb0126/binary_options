@@ -1,0 +1,258 @@
+
+
+
+.rate-head{
+	color:#fff;
+}
+ @media only screen and (max-width : 540px) {
+
+.left-bg-header {
+    min-height: 100%;
+    max-width: 100%;
+    width: 100%;
+    position: relative;
+     border: 0px solid #161d15;
+}
+.right-side-header {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.menu-header{
+    display: none;
+}
+
+.trade-history-pad {
+    padding-left: 0%;
+    margin-top: 20px;
+}
+.open-trader-padd {
+     padding-right: 0%;
+}
+.content-table-sec th {
+    font-size: 2vmin;
+}
+.content-table-sec td {
+    font-size: 2vmin;
+}
+.menu-header li a {
+    font-size: 4vmin;
+}
+.move-right-position {
+    margin-left: 0px;
+}
+.btn-affiliate-list {
+    margin-bottom: 10px !important;
+}
+
+.vector-graph-sec {
+    border: 1px solid #3f3e4e;
+    border-left: 1px solid #3f3e4e !important;
+}
+.affiliate-wining-text {
+    height: 122px !important;
+}
+    }
+
+
+.tab-title{
+    margin:8px auto;
+    width: 100%;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.live-rate-sec .tab-button{
+    width: 50%;
+    background: #3f3e4e !important;
+    color: #fff !important;
+    box-shadow: none !important;
+    text-shadow: 0px 0px !important;
+    border: 1px solid #3f3e4e;
+    margin: 12px auto 0px auto;
+    font-weight: 300;
+    font-size: 16px;
+}
+.bitcoin-modal {
+    width: 400px;
+        margin: 90px auto;
+}
+.modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+}
+.myfirst-modal .modal-title {
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+}
+.myfirst-modal .modal-header {
+    background: #3f3e4e !important;
+}
+.myfirst-modal button.close {
+    position: absolute;
+    width: 10%;
+    background: none;
+    opacity: 1;
+    color: #fff;
+    font-size: 27px;
+    box-shadow: 0px 0px;
+    margin: 0px;
+    right: 0;
+    top: 9px;
+    text-shadow: 0px 0px !important;
+    z-index: 1;
+}
+.myfirst-modal button.close:hover, .myfirst-modal button.close:focus {
+    background: none !important;
+    color: #ffff;
+}
+.bitcoin-modal-content img {
+    margin: 0px auto;
+}
+.btn-copy {
+    background: #3f3e4e;
+    color: #FFF !important;
+    width: 154px;
+    border:1px solid #3f3e4e;
+    border-radius: 27px 27px;
+    font-size: 16px;
+    font-weight: 500 !important;
+    outline:none;
+}
+
+.btn-copy:hover,.btn-copy:active,.btn-copy:focus{
+    background: #fff;
+    color: #3f3e4e !important;
+    border:1px solid #3f3e4e;
+    box-shadow:0px 0px;
+}
+.btn-affiliate-list h3 {
+    margin: 0px;
+    background: #3f3e4e;
+    border:1px solid #3f3e4e;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 300;
+    padding: 10px 0px;
+}
+.btn-affiliate-list {
+    padding: 0px 5px;
+}
+.current-month-padd {
+    margin-top: 7px;
+    margin-bottom: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.chart {
+  width: 100%;
+  min-height: 279px;
+}
+.vector-graph-sec {
+    border: 1px solid #3f3e4e;
+    border-left: 0px;
+    border-top: 0px;
+    box-shadow: 5px 6px 10px #ababab;
+}
+.commision-img-sec {
+    border: 1px solid #000;
+    border-top: 0px;
+    padding: 10px;
+    height: 280px !important;
+    background: #fff;
+        box-shadow: -4px 5px 9px #989898;
+}
+
+.graph-commision-padd {
+    padding-left: 25px;
+    padding-right: 26px;
+    padding-bottom: 15px;
+        margin-top: -1px;
+}
+.commision-img-sec img {
+    padding-top: 4%;
+}
+.affiliate-wining-text {
+    background: #3f3e4e;
+    padding: 16px 10px;
+    margin-top: 10px;
+    height: 170px;
+    text-align: center;
+        box-shadow: 1px 3px 10px #4a4747;
+    border: 3px solid #000;
+}
+.affiliate-wining-text h3 {
+    color: #fff;
+    font-size: 1.6vmax;
+    padding-top: 19px;
+}
+.btn-affiliate-list {
+    color: #fff;
+    text-align: center;
+}
+.btn-affiliate-list a{
+    color: #fff;
+    background: #3f3e4e;
+    border-radius: 0px 0px !important;
+    border:1px solid #3f3e4e;
+
+}
+.btn-affiliate-list a:hover,.btn-affiliate-list a:active,.btn-affiliate-list a:focus{
+    color: #fff !important;
+    background: #3f3e4e !important;
+    border:1px solid #3f3e4e !important;
+}
+.active.btn-affiliate-list a{
+    color: #fff !important;
+    background: #3f3e4e !important;
+    border-radius: 0px 0px !important;
+    border:1px solid #3f3e4e !important;
+
+}
+.btn-affiliate-list span{
+    border-bottom: 1px solid #3f3e4e !important;
+        width: 90%;
+    color: #fff;
+    border-radius: 0px 0px;
+        font-size: 16px;
+    padding: 0px;
+}
+.btn-affiliate-list span:hover{
+    border-bottom: 1px solid #fff !important;
+    color:#fff !important;
+}
+
+.sign-table-padd {
+    padding-bottom: 16px !important;
+}
+.more-padd {
+    padding: 6px 14px;
+}
+.time-sec-head {
+    text-align: center;
+    background: #3f3e4e;
+    color: #fff;
+    padding: 12px 0px;
+    border: 2px solid #000;
+    font-size: 15px;
+        box-shadow: 3px 4px 10px #777575;
+}
+.time-left-padd {
+    padding-left: 13px;
+    padding-right: 13px;
+}
+.affiliate-wining-text h3 i {
+    display: inline-block;
+    margin: 3px 6px 0px 0px;
+}
+svg {
+    width: 100% !important;
+}
+/*.chart div {*/
+/*    width: 100% !important;*/
+/*}*/
+.active.btn-affiliate-list span {
+    border-bottom: 1px solid #fff !important;
+    color: #fff !important;
+}
