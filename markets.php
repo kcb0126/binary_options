@@ -126,6 +126,7 @@ require("header.php");
 				success: function(alldata) {
 					$('.binary-right-position').text('');
 					$('#markets').text('');
+					console.log(alldata);
 					for(var index in alldata.markets){
 						var data = alldata.markets[index];
 						var timeNow = new Date().getTime() / 1000;

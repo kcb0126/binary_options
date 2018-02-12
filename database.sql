@@ -36,6 +36,26 @@ CREATE TABLE `archivedBets` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Table structure for table `archivedDemoBets`
+--
+
+DROP TABLE IF EXISTS `archivedDemoBets`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `archivedDemoBets` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `amount` decimal(12,8) NOT NULL,
+  `profit` decimal(12,8) NOT NULL,
+  `pair` int(255) NOT NULL,
+  `userid` int(255) NOT NULL,
+  `marketid` int(255) NOT NULL,
+  `direction` int(255) NOT NULL,
+  `date` int(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='latin1_swedish_ci';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `archivedMarkets`
 --
 
@@ -72,6 +92,25 @@ CREATE TABLE `bets` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Table structure for table `demoBets`
+--
+
+DROP TABLE IF EXISTS `demoBets`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `demoBets` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `marketid` int(255) NOT NULL,
+  `userid` int(255) NOT NULL,
+  `amount` decimal(12,8) NOT NULL,
+  `direction` varchar(255) NOT NULL,
+  `date` int(255) NOT NULL,
+  `expiry` int(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1 COMMENT='latin1_swedish_ci';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `markets`
 --
 
@@ -99,7 +138,9 @@ CREATE TABLE `users` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `balance` decimal(12,8) NOT NULL,
+  `bitcoinBalance` decimal(12,8) NOT NULL,
+  `ethereumBalance` decimal(12,8) NOT NULL,
+  `demoBalance` decimal(12,8) NOT NULL,
   `depositAddress` varchar(255) NOT NULL,
   `2fasecret` varchar(255) NOT NULL,
   `2faactivated` int(255) DEFAULT NULL,

@@ -50,6 +50,9 @@ input{
     padding-left: 10px
 }
 
+.pair-box-container {
+    min-width: 100px;
+}
 
 .carousel-control {
   padding-top: 10px;

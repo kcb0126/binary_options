@@ -39,8 +39,8 @@ if($_POST){
 
 	$userSQL = mysqli_query($con, "SELECT * FROM users WHERE email='$_SESSION[email]' AND password='$_SESSION[password]'");
 	$userInfo = mysqli_fetch_array($userSQL);
-	die(json_encode(array("status"=>true, "newBalance"=>$userInfo['balance'])));
 	mysqli_query($con, "COMMIT");
+    die(json_encode(array("status"=>true, "newBalance"=>$userInfo['balance'])));
 }
 
 die(json_encode(array("status"=>false, "message"=>"Invalid data.")));

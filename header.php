@@ -14,11 +14,11 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
 
 
-    <!--     <link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css" /> -->
+         <link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css" />
 
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 
-    <!--   <script src="js/jquery.mobile-1.4.2.min.js"></script> -->
+       <script src="js/jquery.mobile-1.4.2.min.js"></script>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
