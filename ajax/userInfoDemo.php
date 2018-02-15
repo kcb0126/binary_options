@@ -22,7 +22,7 @@ while($data = mysqli_fetch_array($betsSQL))
     $expiry = 0 + $data['date'] + $data['expiry'] - time();
     $status = $expiry > 0 ? "open" : "closed";
     if($expiry < 0) $expiry = 0;
-    $json['orders'][] = array("marketid"=>$marketid,
+    $json['orders'][] = array("marketid"=>$data['marketid'],
                                 "status"=>$status,
                                 "amount"=>$data['amount'],
                                 "startingrate"=>$data['startingrate'],
