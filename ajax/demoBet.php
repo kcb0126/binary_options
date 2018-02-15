@@ -19,6 +19,9 @@ if($_POST){
     $expiry = mysqli_real_escape_string($con, $_POST['expiry']);
     $expiry = (int)$expiry;
 
+    $startingrate = mysqli_real_escape_string($con, $_POST['startingrate']);
+    $startingrate = (float)$startingrate;
+
 	mysqli_query($con, "START TRANSACTION");
 	$userSQL = mysqli_query($con, "SELECT * FROM users WHERE email='$_SESSION[email]' AND password='$_SESSION[password]' FOR UPDATE");
 	$userInfo = mysqli_fetch_array($userSQL);
@@ -33,20 +36,14 @@ if($_POST){
 	if($userInfo['demoBalance'] < $amt)
 		die(json_encode(array("status"=>false, "message"=>"Insufficient funds.")));
 
-	if($direction == "up") {
-        mysqli_query($con, "UPDATE users SET demoBalance=demoBalance-$amt WHERE id='$userInfo[id]'");
-    }
-    else {
-        mysqli_query($con, "UPDATE users SET demoBalance=demoBalance+$amt WHERE id='$userInfo[id]'");
-    }
+    mysqli_query($con, "UPDATE users SET demoBalance=demoBalance-$amt WHERE id='$userInfo[id]'");
 
 	if(!mysqli_affected_rows($con)){
 		mysqli_query($con, "ROLLBACK");
 		die(json_encode(array("status"=>false, "message"=>"System error1.")));
 	}
 
-	// marketid=-1 means it is not a real market.
-    mysqli_query($con, "INSERT INTO demobets (userid, marketid, amount, direction, date, expiry) VALUES ('$userInfo[id]', '-1', '$amt', '$direction', '".time()."', '$expiry')");
+    mysqli_query($con, "INSERT INTO demobets (userid, marketid, amount, startingrate, direction, date, expiry) VALUES ('$userInfo[id]', '$market', '$amt', '$startingrate', '$direction', '".time()."', '$expiry')");
 	if(!mysqli_affected_rows($con)){
 		mysqli_query($con, "ROLLBACK");
 		die(json_encode(array("status"=>false, "message"=>"System error2.")));

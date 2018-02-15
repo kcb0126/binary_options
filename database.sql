@@ -46,11 +46,15 @@ CREATE TABLE `archivedDemoBets` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
   `amount` decimal(12,8) NOT NULL,
   `profit` decimal(12,8) NOT NULL,
-  `pair` int(255) NOT NULL,
+  `startrate` decimal(12,8) NOT NULL,
+  `closerate` decimal(12,8) NOT NULL,
+  `pair` varchar (255) NOT NULL,
   `userid` int(255) NOT NULL,
   `marketid` int(255) NOT NULL,
-  `direction` int(255) NOT NULL,
-  `date` int(255) NOT NULL,
+  `direction` varchar(255) NOT NULL,
+  `startingdate` int(255) NOT NULL,
+  `finishtime` int(255) NOT NULL,
+  `betstatus` int(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='latin1_swedish_ci';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -103,6 +107,7 @@ CREATE TABLE `demoBets` (
   `marketid` int(255) NOT NULL,
   `userid` int(255) NOT NULL,
   `amount` decimal(12,8) NOT NULL,
+  `startingrate` decimal(12, 8) NOT NULL,
   `direction` varchar(255) NOT NULL,
   `date` int(255) NOT NULL,
   `expiry` int(255) NOT NULL,

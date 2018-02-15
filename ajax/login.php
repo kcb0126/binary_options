@@ -25,7 +25,7 @@ if($_POST){
 
 //		if(!mysqli_query($con, "INSERT INTO users (email, password, balance, depositAddress, 2fasecret, 2faactivated, referrer, signupdate) VALUES ('$email', '$password', '0', 'null', '', '0', '".(int)$_SESSION['ref']."', '".time()."')"))
         $referrer = array_key_exists('ref' ,$_SESSION) ? (int)$_SESSION['ref'] : 0;
-        if(!mysqli_query($con, "INSERT INTO users (email, password, bitcoinBalance, ethereumBalance, demoBalance, depositAddress, 2fasecret, 2faactivated, referrer, signupdate) VALUES ('$email', '$password', '0', '0', '0', 'null', '', '0', '".$referrer."', '".time()."')"))
+        if(!mysqli_query($con, "INSERT INTO users (email, password, bitcoinBalance, ethereumBalance, demoBalance, depositAddress, 2fasecret, 2faactivated, referrer, signupdate) VALUES ('$email', '$password', '0', '0', '10', 'null', '', '0', '".$referrer."', '".time()."')"))
 			die(json_encode(array("status"=>false, "message"=>"Database error.")));
 
 		$_SESSION['email'] = $email;

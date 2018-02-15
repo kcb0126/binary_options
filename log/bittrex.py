@@ -21,18 +21,18 @@ url_ticks_eth_ltc = url_apiV20 + "pub/market/GetTicks?marketName=ETH-LTC&tickInt
 url_ticks_eth_neo = url_apiV20 + "pub/market/GetTicks?marketName=ETH-NEO&tickInterval=oneMin"
 url_ticks_eth_xrp = url_apiV20 + "pub/market/GetTicks?marketName=ETH-XRP&tickInterval=oneMin"
 
-url_marketsummury_btc_eth = url_apiV11 + "public/getmarketsummary?market=BTC-ETH"
-url_marketsummury_btc_ltc = url_apiV11 + "public/getmarketsummary?market=BTC-LTC"
-url_marketsummury_btc_neo = url_apiV11 + "public/getmarketsummary?market=BTC-NEO"
-url_marketsummury_btc_xrp = url_apiV11 + "public/getmarketsummary?market=BTC-XRP"
+url_marketsummary_btc_eth = url_apiV11 + "public/getmarketsummary?market=BTC-ETH"
+url_marketsummary_btc_ltc = url_apiV11 + "public/getmarketsummary?market=BTC-LTC"
+url_marketsummary_btc_neo = url_apiV11 + "public/getmarketsummary?market=BTC-NEO"
+url_marketsummary_btc_xrp = url_apiV11 + "public/getmarketsummary?market=BTC-XRP"
 
 # same reason as above
-# url_marketsummury_eth_btc = url_apiV11 + "public/getmarketsummary?market=ETH-BTC"
-url_marketsummury_eth_neo = url_apiV11 + "public/getmarketsummary?market=ETH-NEO"
-url_marketsummury_eth_ltc = url_apiV11 + "public/getmarketsummary?market=ETH-LTC"
-url_marketsummury_eth_xrp = url_apiV11 + "public/getmarketsummary?market=ETH-XRP"
+# url_marketsummary_eth_btc = url_apiV11 + "public/getmarketsummary?market=ETH-BTC"
+url_marketsummary_eth_neo = url_apiV11 + "public/getmarketsummary?market=ETH-NEO"
+url_marketsummary_eth_ltc = url_apiV11 + "public/getmarketsummary?market=ETH-LTC"
+url_marketsummary_eth_xrp = url_apiV11 + "public/getmarketsummary?market=ETH-XRP"
 
-url_market = url_apiV11 + "public/getmarkets"
+url_marketsummaries = url_apiV11 + "public/getmarketsummaries"
 
 # json data for last 30 minutes to draw 8 min charts
 log_for_minChart = {}
@@ -116,36 +116,36 @@ def update_log_for_minChart():
     pastSec = pastSec != -1 and pastSec or sec
 
     try:
-        response = requests.request("GET", url_marketsummury_btc_eth)
+        response = requests.request("GET", url_marketsummary_btc_eth)
         data = response.json()
         value_btc_eth = data['result'][0]['Last']
 
-        response = requests.request("GET", url_marketsummury_btc_ltc)
+        response = requests.request("GET", url_marketsummary_btc_ltc)
         data = response.json()
         value_btc_ltc = data['result'][0]['Last']
 
-        response = requests.request("GET", url_marketsummury_btc_neo)
+        response = requests.request("GET", url_marketsummary_btc_neo)
         data = response.json()
         value_btc_neo = data['result'][0]['Last']
 
-        response = requests.request("GET", url_marketsummury_btc_xrp)
+        response = requests.request("GET", url_marketsummary_btc_xrp)
         data = response.json()
         value_btc_xrp = data['result'][0]['Last']
 
-        # response = requests.request("GET", url_marketsummury_eth_btc)
+        # response = requests.request("GET", url_marketsummary_eth_btc)
         # data = response.json()
         # value_eth_btc = data['result'][0]['Last']
         value_eth_btc = 1.0 / value_btc_eth
 
-        response = requests.request("GET", url_marketsummury_eth_ltc)
+        response = requests.request("GET", url_marketsummary_eth_ltc)
         data = response.json()
         value_eth_ltc = data['result'][0]['Last']
 
-        response = requests.request("GET", url_marketsummury_eth_neo)
+        response = requests.request("GET", url_marketsummary_eth_neo)
         data = response.json()
         value_eth_neo = data['result'][0]['Last']
 
-        response = requests.request("GET", url_marketsummury_eth_xrp)
+        response = requests.request("GET", url_marketsummary_eth_xrp)
         data = response.json()
         value_eth_xrp = data['result'][0]['Last']
 

@@ -1,0 +1,30 @@
+.panel-tools {
+  display: inline-block;
+  float: right;
+  margin-top: 0;
+  padding: 0;
+  position: relative;
+}
+
+.hpanel .panel-body {
+  background: #fff;
+  border: 1px solid #e4e5e7;
+  border-radius: 2px;
+  padding: 20px;
+  position: relative;
+}
+
+/* Charts */
+.flot-chart {
+  display: block;
+  height: 300px;
+  position: relative;
+}
+
+.flot-chart-content {
+  width: 100%;
+  height: 100%;
+}
+.stats .flot-chart {
+  height: 60px;
+}

@@ -1298,3 +1298,106 @@ i.fa-caret-down {
     margin-left: 0px;
 }
     }
+
+.losing-table td {
+    background: #D78180 !important;
+    color: #fff;
+    border: 0px solid #fff;
+    padding: 5px !important;
+    font-weight: 300;
+    text-align: center;
+    font-size:13.5px;
+
+}
+
+
+.winning-table td {
+    background: #7ECA7F !important;
+    color: #fff;
+    border: 0px solid #fff;
+    padding: 5px !important;
+    font-weight: 300;
+    text-align: center;
+    font-size:13.5px;
+    margin-top: 25%;
+
+}
+.losing-table td {
+    background: #D78180 !important;
+    color: #fff;
+    border: 0px solid #fff;
+    padding: 5px !important;
+    font-weight: 300;
+    text-align: center;
+    font-size:13.5px;
+
+}
+
+.tie-table td {
+    background: #32383e !important;
+    color: #fff;
+    border: 0px solid #fff;
+    padding: 5px !important;
+    font-weight: 300;
+    text-align: center;
+    font-size:13.5px;
+
+}
+
+.winning-table td {
+    background: #7ECA7F !important;
+    color: #fff;
+    border: 0px solid #fff;
+    padding: 5px !important;
+    font-weight: 300;
+    text-align: center;
+    font-size:13.5px;
+
+}
+
+.div-countdown {
+    position: relative;
+    margin: auto;
+    margin-top: 1px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+}
+
+.div-countdown-number {
+    color: white;
+    display: inline-block;
+    line-height: 40px;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    transform: rotateY(-180deg) rotateZ(-90deg);
+}
+
+svg circle {
+    stroke-dasharray: 113px;
+    stroke-dashoffset: 0px;
+    stroke-linecap: round;
+    stroke-width: 4px;
+    stroke: white;
+    fill: none;
+    animation: countdown 15s linear infinite forwards;
+}
+
+@keyframes countdown {
+    /*from {*/
+        /*stroke-dashoffset: 0px;*/
+    /*}*/
+    to {
+        stroke-dashoffset: 113px;
+    }
+}
+
+.tr-valign-middle > td {
+    vertical-align: middle!important;
+}

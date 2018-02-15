@@ -1,8 +1,97 @@
 <?php
 $start = microtime(true);
 require("ajax/functions.php");
-$sql = mysqli_query($con, "SELECT * FROM markets WHERE starttime + duration <= '" . time() . "'");
-echo "Processing finished markets..\n";
+$sql = mysqli_query($con, "SELECT * FROM demobets WHERE date + expiry <= '" . time() . "'");
+echo "Processing finished demobets..\n";
+
+$filename = "log/markets.json";
+$myfile = fopen($filename, "r") or die("Unable to open file!");
+$markets = json_decode(fread($myfile,filesize($filename)), true);
+fclose($myfile);
+
+$market_names = ['Nothing', 'btc-eth', 'btc-ltc', 'btc-neo', 'btc-xrp', 'eth-btc', 'eth-ltc', 'eth-neo', 'eth-xrp'];
+$pair_names = ['Notused', 'BTC/ETH', 'BTC/LTC', 'BTC/NEO', 'BTC/XRP', 'ETH/BTC', 'ETH/LTC', 'ETH/NEO', 'ETH/XRP'];
+
+$profit_percentages = [60=>1.65, 300=>1.75, 900=>1.85];
+
+while ($demobet = mysqli_fetch_array($sql)) {
+    $market_id = $demobet['marketid'];
+    $market_name = $market_names[$market_id];
+    $starting_rate = $demobet['startingrate'];
+    $current_rate = $markets[$market_name];
+    $direction = $demobet['direction'];
+    $expiry = $demobet['expiry'];
+    $profit_percentage = $profit_percentages[$expiry];
+    $amount = $demobet['amount'];
+    $betid = $demobet['id'];
+    $pairname = $pair_names[$market_id];
+    $userid = $demobet['userid'];
+    $startingdate = $demobet['date'];
+    $finishtime = $startingdate + $expiry;
+
+    $profit = 0;
+    $betStatus = 0; // 1: win, 2: tie, 3: lose
+
+    if($direction == 'up') {
+        if($starting_rate < $current_rate) {
+            $profit = $amount * $profit_percentage;
+            $betStatus = 1;
+        }
+        else if($starting_rate == $current_rate) {
+            $profit = $amount;
+            $betStatus = 2;
+        }
+        else {
+            $profit = 0;
+            $betStatus = 3;
+        }
+    }
+    else if($direction == 'down') {
+        if($starting_rate > $current_rate) {
+            $profit = $amount * $profit_percentage;
+            $betStatus = 1;
+        }
+        else if($starting_rate == $current_rate) {
+            $profit = $amount;
+            $betStatus = 2;
+        }
+        else {
+            $profit = 0;
+            $betStatus = 3;
+        }
+    }
+
+    mysqli_query($con, "START TRANSACTION");
+
+    // delete old data from demobets table
+    mysqli_query($con, "DELETE FROM demobets WHERE id=".$demobet['id']);
+    if(!mysqli_affected_rows($con)) {
+        mysqli_query($con, "ROLLBACK");
+        die("Error while delete row in demobets table");
+    }
+
+    // add to archiveddemobets table
+    $query_for_add_archivedemobets = "INSERT INTO archiveddemobets (amount,profit,startrate,closerate,pair,userid,marketid,direction,startingdate,finishtime,betstatus)
+                  VALUES($amount, $profit, $starting_rate, $current_rate, '$pairname', $userid, $market_id, '$direction', $startingdate, $finishtime, $betStatus)";
+    if(!mysqli_query($con, $query_for_add_archivedemobets)) {
+        mysqli_query($con, "ROLLBACK");
+        die("Error while inserting into archiveddemobets");
+    }
+
+    // update user balance;
+    if(!mysqli_query($con, "UPDATE users SET demoBalance = demoBalance + $profit WHERE id = $userid")) {
+        mysqli_query($con, "ROLLBACK");
+        die("Error while updating users table.");
+    }
+
+    mysqli_query($con, "COMMIT");
+
+}
+
+echo "\nCronjob done, time elapsed: " . (microtime(true) - $start) . " seconds";
+
+die(0);
+
 while ($data = mysqli_fetch_array($sql)) {
     echo "Market ID: " . $data['id'] . "\n";
     mysqli_query($con, "START TRANSACTION");

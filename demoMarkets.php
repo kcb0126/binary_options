@@ -79,7 +79,7 @@ require("header.php");
 <h4 class="time-left">Time left: <span>02:30</span></h4>
 
 </div>
-<a href="" class="btn btn-visit">Expand</a>
+<a href="demoMarket.php?market=btc-ltc" class="btn btn-visit">Expand</a>
 
 </div>
 </div>
@@ -116,7 +116,7 @@ require("header.php");
 <h4 class="time-left">Time left: <span>02:30</span></h4>
 
 </div>
-<a href="" class="btn btn-visit">Expand</a>
+<a href="demoMarket.php?market=btc-neo" class="btn btn-visit">Expand</a>
 
 </div>
 </div>
@@ -153,7 +153,7 @@ require("header.php");
 <h4 class="time-left">Time left: <span>02:30</span></h4>
 
 </div>
-<a href="" class="btn btn-visit">Expand</a>
+<a href="demoMarket.php?market=btc-xrp" class="btn btn-visit">Expand</a>
 
 </div>
 </div>
@@ -206,7 +206,7 @@ require("header.php");
 <h4 class="time-left">Time left: <span>02:30</span></h4>
 
 </div>
-<a href="" class="btn btn-visit">Expand</a>
+<a href="demoMarket.php?market=eth-btc" class="btn btn-visit">Expand</a>
 
 </div>
 </div><!-- first box -->
@@ -242,7 +242,7 @@ require("header.php");
 <h4 class="time-left">Time left: <span>02:30</span></h4>
 
 </div>
-<a href="" class="btn btn-visit">Expand</a>
+<a href="demoMarket.php?market=eth-ltc" class="btn btn-visit">Expand</a>
 
 </div>
 </div>
@@ -279,7 +279,7 @@ require("header.php");
 <h4 class="time-left">Time left: <span>02:30</span></h4>
 
 </div>
-<a href="" class="btn btn-visit">Expand</a>
+<a href="demoMarket.php?market=eth-neo" class="btn btn-visit">Expand</a>
 
 </div>
 </div>
@@ -316,7 +316,7 @@ require("header.php");
 <h4 class="time-left">Time left: <span>02:30</span></h4>
 
 </div>
-<a href="" class="btn btn-visit">Expand</a>
+<a href="demoMarket.php?market=eth-xrp" class="btn btn-visit">Expand</a>
 
 </div>
 </div>

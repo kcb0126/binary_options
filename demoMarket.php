@@ -3,6 +3,38 @@ require("ajax/functions.php");
 if(!$userInfo)
     header("Location: index.php");
 require("header.php");
+
+$marketId = 0;
+switch (strtoupper($_GET['market'])) {
+    case 'BTC-ETH':
+        $marketId = 1;
+        break;
+    case 'BTC-LTC':
+        $marketId = 2;
+        break;
+    case 'BTC-NEO':
+        $marketId = 3;
+        break;
+    case 'BTC-XRP':
+        $marketId = 4;
+        break;
+    case 'ETH-BTC':
+        $marketId = 5;
+        break;
+    case 'ETH-LTC':
+        $marketId = 6;
+        break;
+    case 'ETH-NEO':
+        $marketId = 7;
+        break;
+    case 'ETH-XRP':
+        $marketId = 8;
+        break;
+    default:
+        // do something
+        break;
+}
+
 ?>
 
 <!-- Use these meta tags to bypass safari touch events on ipad, otherwise scrolling and drawing will not work -->
@@ -16,9 +48,7 @@ require("header.php");
 <link rel="stylesheet" type="text/css" href="css/stx-print.css" media="print" />
 <!--<script src="js/jquery-3.3.1.min.js"></script>-->
 
-
-    
- <div id="myCarousel" class="col-sm-12 col-xs-12 over-padd-btc carousel slide">
+<div id="myCarousel" class="col-sm-12 col-xs-12 over-padd-btc carousel slide">
                             <div class="col-sm-12 col-xs-12 no-padd live-pairs">
                                 <h5 class="text-center rate-head">Pairs</h5>
 
@@ -36,26 +66,26 @@ require("header.php");
 
                                         <div class="box-home pairs-box">
                                             <h4><nobr><span class="label label-danger pull-right">- 19%</span> BTC/ETH </nobr><h4>
-                                            <h5 class="text-danger"><i class="fa fa-caret-down"></i> 0.00235392 </h5>
+                                                    <h5><i id="arrow-btc-eth" class="fa fa-caret-up"></i> <span id="price-btc-eth" class="text-success">0.00000000</span> </h5>
                                         </div>
                                     </div>
 
                                     <div class="col-md-2">
                                         <div class="box-home pairs-box">
                                             <h4><nobr><span class="label label-success pull-right">+ 3%</span> BTC/LTC </nobr><h4>
-                                            <h5 class="text-danger"><i class="fa fa-caret-down"></i> 0.07455392 </h5>
+                                                    <h5><i id="arrow-btc-ltc" class="fa fa-caret-up"></i> <span id="price-btc-ltc" class="text-success">0.07455392</span> </h5>
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="box-home pairs-box">
-                                            <h4><nobr><span class="label label-danger pull-right">- 9%</span> BTC/XRM </nobr><h4>
-                                            <h5 class="text-success"><i class="fa fa-caret-up"></i> 0.06839672 </h5>
+                                            <h4><nobr><span class="label label-danger pull-right">- 9%</span> BTC/NEO </nobr><h4>
+                                                    <h5><i class="fa fa-caret-up" id="arrow-btc-neo"></i> <span id="price-btc-neo" class="text-success">0.06839672</span> </h5>
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="box-home pairs-box">
-                                            <h4><nobr><span class="label label-success pull-right">+ 27%</span> BTC/TRX </nobr><h4>
-                                            <h5 class="text-danger"><i class="fa fa-caret-down"></i> 0.06372859 </h5>
+                                            <h4><nobr><span class="label label-success pull-right">+ 27%</span> BTC/XRP </nobr><h4>
+                                                    <h5><i class="fa fa-caret-up" id="arrow-btc-xrp"></i> <span id="price-btc-xrp" class="text-success">0.06372859</span> </h5>
                                         </div>
                                     </div>
                                     <div class="col-md-2">
@@ -83,27 +113,27 @@ require("header.php");
                                     <div class="col-md-2">
 
                                         <div class="box-home pairs-box">
-                                            <h4><nobr><span class="label label-danger pull-right">- 19%</span> BTC/ETH </nobr><h4>
-                                            <h5 class="text-danger"><i class="fa fa-caret-down"></i> 0.00235392 </h5>
+                                            <h4><nobr><span class="label label-danger pull-right">- 19%</span> ETH/BTC </nobr><h4>
+                                            <h5><i class="fa fa-caret-up" id="arrow-eth-btc"></i> <span id="price-eth-btc" class="text-success"> 0.00235392</span> </h5>
                                         </div>
                                     </div>
 
                                     <div class="col-md-2">
                                         <div class="box-home pairs-box">
-                                            <h4><nobr><span class="label label-success pull-right">+ 3%</span> BTC/LTC </nobr><h4>
-                                            <h5 class="text-danger"><i class="fa fa-caret-down"></i> 0.07455392 </h5>
+                                            <h4><nobr><span class="label label-success pull-right">+ 3%</span> ETH/LTC </nobr><h4>
+                                            <h5><i class="fa fa-caret-up" id="arrow-eth-ltc"></i> <span id="price-eth-ltc" class="text-success">0.07455392</span> </h5>
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="box-home pairs-box">
-                                            <h4><nobr><span class="label label-danger pull-right">- 9%</span> BTC/XRM </nobr><h4>
-                                            <h5 class="text-success"><i class="fa fa-caret-up"></i> 0.06839672 </h5>
+                                            <h4><nobr><span class="label label-danger pull-right">- 9%</span> ETH/NEO </nobr><h4>
+                                            <h5><i class="fa fa-caret-up" id="arrow-eth-neo"></i> <span id="price-eth-neo" class="text-success">0.06839672 </span></h5>
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="box-home pairs-box">
-                                            <h4><nobr><span class="label label-success pull-right">+ 27%</span> BTC/TRX </nobr><h4>
-                                            <h5 class="text-danger"><i class="fa fa-caret-down"></i> 0.06372859 </h5>
+                                            <h4><nobr><span class="label label-success pull-right">+ 27%</span> ETH/XRP </nobr><h4>
+                                            <h5><i class="fa fa-caret-up" id="arrow-eth-xrp"></i> <span id="price-eth-xrp" class="text-success">0.06372859 </span></h5>
                                         </div>
                                     </div>
                                     <div class="col-md-2">
@@ -141,12 +171,12 @@ require("header.php");
 <div class="col-md-4 text-center">
         <div class="box-home alert-box button-wrapper text-center" style="height: 113px">
             <h4> Time Frame </h4>
-            <a href="javascript:void(0)" onclick="changePeriodicity('12h')" class="btn btn-chart">12h</a>
-            <a href="javascript:void(0)" onclick="changePeriodicity('8h')" class="btn btn-chart">8h</a>
-            <a href="javascript:void(0)" onclick="changePeriodicity('4h')" class="btn btn-chart">4h</a>
-            <a href="javascript:void(0)" onclick="changePeriodicity('2h')" class="btn btn-chart">2h</a>
-            <a href="javascript:void(0)" onclick="changePeriodicity('1h')" class="btn btn-chart">1h</a>
-            <a href="javascript:void(0)" onclick="changePeriodicity('30m')" class="btn btn-chart">30m</a>
+            <a href="javascript:void(0)" onclick="setCandleCount(720)" class="btn btn-chart">12h</a>
+            <a href="javascript:void(0)" onclick="setCandleCount(480)" class="btn btn-chart">8h</a>
+            <a href="javascript:void(0)" onclick="setCandleCount(240)" class="btn btn-chart">4h</a>
+            <a href="javascript:void(0)" onclick="setCandleCount(120)" class="btn btn-chart">2h</a>
+            <a href="javascript:void(0)" onclick="setCandleCount(60)" class="btn btn-chart">1h</a>
+            <a href="javascript:void(0)" onclick="setCandleCount(30)" class="btn btn-chart">30m</a>
         </div>
       </div>
        
@@ -524,15 +554,15 @@ require("header.php");
 
                         <!-- Timezone Dialogs -->
                         <div id="timezoneDialog" style="display:none;" class="stx-dialog">
-                            <h4 class="title">Choose Timezone</h4>
+                            <h4 class="title" style="color: black!important;">Choose Timezone</h4>
                             <div onClick="STX.DialogManager.dismissDialog()" class="stx-btn stx-ico"><span class="stx-ico-close">Close</span></div>
-                            <p>To set your timezone use the location button below, or scroll through the following list...</p>
+                            <p style="color: black!important">To set your timezone use the location button below, or scroll through the following list...</p>
                             <div class="detect">
                                 <div class="stx-btn" onClick="STX.TimeZoneWidget.removeTimeZone();STX.DialogManager.dismissDialog();">Use My Current Location</div>
                             </div>
                             <div id="timezoneDialogWrapper" style="max-height:360px;">
                                 <ul>
-                                    <li id="timezoneTemplate" style="display:none;cursor:pointer;"></li>
+                                    <li id="timezoneTemplate" style="display:none;cursor:pointer;color: black!important;"></li>
                                 </ul>
                             </div>
                             <div class="instruct">(Scroll for more options)</div>
@@ -550,7 +580,7 @@ require("header.php");
 
                         <!-- Theme Dialog -->
                         <div id="themeDialog" style="display:none" class="stx-dialog">
-                            <h4>Create a New Custom Theme</h4>
+                            <h4 style="color: black!important;">Create a New Custom Theme</h4>
                             <div onClick="STX.DialogManager.dismissDialog()" class="stx-btn stx-ico"><span class="stx-ico-close">Close</span></div>
 
                             <div class="settings">
@@ -693,28 +723,29 @@ require("header.php");
 
 
         <h4> Expiry <span>
-        <a href="javascript:void(0)" onclick="expiry=1" class="btn btn-chart">1m</a>
-        <a href="javascript:void(0)" onclick="expiry=5" class="btn btn-chart">5m</a>
-        <a href="javascript:void(0)" onclick="expiry=15" class="btn btn-chart">15m</a>
+        <a href="javascript:void(0)" class="btn btn-chart" id="expiry-1m">1m</a>
+        <a href="javascript:void(0)" class="btn btn-chart" id="expiry-5m">5m</a>
+        <a href="javascript:void(0)" class="btn btn-chart" id="expiry-15m">15m</a>
 
             </span></h4>
 
 </li>
-    <li><h4>Payout <span class="text-success">65%</span></h4></li>
+    <li><h4>Payout <span class="text-success" id="text-payout">65%</span></h4></li>
 <li><h4>Balance <span id="demoBalance">0.12345678 DEMO</span></h4></li>
     <li><h4>Market <span><i id="marketArrow" class="fa fa-caret-up"></i> <span id="marketValue">0.12345678 BTC</span></span></h4></li>
 </ul>
 </div>
 
 
-<div class="col-sm-12 col-xs-12 no-padd main-padd-left">
 
-<input type="text" id="amount" name="" class="btc-value-input" value="0.0100 Btc">
+<div class="col-sm-12 col-xs-12 no-padd main-padd-left" style="position: relative" >
 
+<input type="text" id="amount" name="" class="btc-value-input" value="0.00000000" >
+<span style="position: absolute; right: 20px;top: 22px; color: black;">DEMO</span>
 
 <div class="col-sm-12 col-xs-12 no-padd range-slider">
       <label for="slider">Size:</label> 
-    <input type="range" name="slider" id="slider" value="0" min="0" max="100" data-highlight="true" class="volume-type-slide" />
+    <input type="range" name="slider" id="slider" value="0" min="0" max="100" data-highlight="true" onchange="percentage_changed(this)" class="volume-type-slide" />
       
 </div>
 
@@ -749,35 +780,37 @@ require("header.php");
   <h4 class="open-trader-head text-center"> Open traders </h4>  
 
     <div class="tab-pane active">
-<table class="table table-trader table-striped">
+<table id="openTrades" class="table table-trader table-striped">
 
 <tr class="content-table-sec">
 <th class="col-sm-2 no-padd">Pair</th>
 <th class="col-sm-2 no-padd">Amount</th>
-<th class="col-sm-2 no-padd">Target</th>
-<th class="col-sm-2 no-padd">Market</th>
-<th class="col-sm-2 no-padd">Expiration Time</th>
+<th class="col-sm-2 no-padd">Starting Rate</th>
+<th class="col-sm-2 no-padd">Current Rate</th>
+<th class="col-sm-2 no-padd">Time Left</th>
 <th class="col-sm-2 no-padd">Profit</th>
 </tr>
 
-<tr class="content-table-sec change-color">
-<td class="col-sm-2 no-padd"><i class="fa fa-caret-up"></i>BTC/ETH</td>
-<td class="col-sm-2 no-padd">BTC 0.01432342</td>
-<td class="col-sm-2 no-padd">0.021123242</td>
-<td class="col-sm-2 no-padd"> 0.023145233</td>
-<td class="col-sm-2 no-padd">15:30</td>
-<td class="col-sm-2 no-padd">BTC 0.0123215</td>
-</tr>
+<!-----------------------------------------------Table Row template----------------------------------------->
+<!--<tr class="content-table-sec winning-table">-->
+<!--<td class="col-sm-2"><i class="fa fa-caret-up"  style="color: #207220 !important"></i>BTC/ETH</td>-->
+<!--<td class="col-sm-2 no-padd">0.01000000 DEMO</td>-->
+<!--<td class="col-sm-2 no-padd">0.02112878 BTC</td>-->
+<!--<td class="col-sm-2 no-padd">0.02333423 BTC</td>-->
+<!--<td class="col-sm-2 no-padd">-->
+<!---->
+<!--<div id="countdown">-->
+<!--<div id="countdown-number"></div>-->
+<!--<svg>-->
+<!--<circle id="circle" r="18" cx="20" cy="20"></circle>-->
+<!--</svg>-->
+<!--</div>-->
+<!---->
+<!--</td>-->
+<!--<td class="col-sm-2 no-padd">0.05000000 DEMO</td>-->
+<!--</tr>-->
+<!-----------------------------------------------End of template----------------------------------------->
 
-
-<tr class="content-table-sec change-color">
-<td class="col-sm-2 no-padd"><i class="fa fa-caret-down"></i>BTC/ETH</td>
-<td class="col-sm-2 no-padd">BTC 0.01</td>
-<td class="col-sm-2 no-padd">0.02112</td>
-<td class="col-sm-2 no-padd"> 0.0233</td>
-<td class="col-sm-2 no-padd">15:30</td>
-<td class="col-sm-2 no-padd">BTC 0.05</td>
-</tr>
 
 </table>
 </div>
@@ -785,23 +818,20 @@ require("header.php");
 
 </div>
 
-    
-  
-
 
 <div class="col-sm-12 col-xs-12 no-padd trade-history-pad">
  <h4 class="open-trader-head text-center"> Trade History </h4> 
 
 
 <div class="tab-pane">
-<table class="table table-trader table-striped">
+<table id="tradeHistory" class="table table-trader table-striped">
 
 <tr class="content-table-sec">
-<th class="col-sm-2 no-padd">Asset</th>
-<th class="col-sm-2 no-padd">Order Time</th>
+<th class="col-sm-2 no-padd">Pair</th>
+<th class="col-sm-2 no-padd">Starting Time</th>
 <th class="col-sm-2 no-padd">Expiration Time</th>
 <th class="col-sm-2 no-padd">Amount</th>
-<th class="col-sm-2 no-padd">Strike Price</th>
+<th class="col-sm-2 no-padd">Starting Price</th>
 <th class="col-sm-2 no-padd">Close Price</th>
 <th class="col-sm-2 no-padd">Result</th>
 <th class="col-sm-2 no-padd">Returns</th>
@@ -842,11 +872,7 @@ require("header.php");
 
 </table>
 </div>
-<div class="col-sm-12 col-xs-12 no-padd footer-sec-table">
-<p class="notes-board">*DISCLAIMER: final rates of buy and sell will be calculated after the trade selling time will expire.</p>
 
-
-</div>
 
 
 </div>
@@ -888,22 +914,9 @@ require("header.php");
     //STX.I18N.setLanguage(stxx, "ru");				// Optionally set translation services
 
     // Add any additional intervals that you support to the displayMap
-    function changePeriodicity(newInterval){
-        var displayMap={
-            "12h":[24, "minute"],
-            "8h":[16, "minute"],
-            "4h":[8, "minute"],
-            "2h":[4, "minute"],
-            "1h":[2, "minute"],
-            "30m":[1, "minute"]
-        };
-        var valueAndUnit = displayMap[newInterval];
-        stxx.setPeriodicityV2(valueAndUnit[0], valueAndUnit[1], function(err){
-            if(!err){
-                $$$("#periodBtn").childNodes[0].data=displayMap[newInterval][1];
-                showAttribution();
-            }
-        });
+    function setCandleCount(count){
+        stxx.setMaxTicks(count);
+        stxx.home();
     }
 
     /*
@@ -911,7 +924,6 @@ require("header.php");
     */
 
     function displayChart(){
-        console.log("display");
         clearTimeout();
         stxx.setPeriodicityV2(1, "minute");
         stxx.newChart("SPY",null,null,showAttribution);
@@ -920,7 +932,7 @@ require("header.php");
     /**
      * Create your own QuoteFeed class derived from STX.QuoteFeed. See documentation or stx.js on how to do this.
      */
-    stxx.attachQuoteFeed(new STX.QuoteFeed.Demo(),{"interval":"minute", "refreshInterval":1});
+    stxx.attachQuoteFeed(new STX.QuoteFeed.Demo(),{"interval":"second", "refreshInterval":1});
 
     /*
      * Modify the components in this function to establish the behavior of your UI.
@@ -1267,10 +1279,8 @@ function clockUpdate() {
 
 <script type="text/javascript">
   $(document).bind("pagecreate", function(event, ui) {
-console.log("pagecreated");
     $('#slider').siblings('.ui-slider').bind('tap', function(event, ui){ makeAjaxChange($(this).siblings('input')); });
     $('#slider').siblings('.ui-slider a').bind('taphold', function(event, ui){ makeAjaxChange($(this).parent().siblings('input'));
-
 });
 
 function makeAjaxChange( elem ) {
@@ -1290,7 +1300,7 @@ function makeAjaxChange( elem ) {
   $(function () {
       displayChart();
     });
-    
+
 
 </script>
 
@@ -1344,20 +1354,120 @@ function myFunction2() {
 
     function userInfoAjax(){
         $.ajax({
-            url: "ajax/userInfo.php?market="+<?=json_encode($_GET['market'])?>,
+            url: "ajax/userInfoDemo.php?market=<?php echo $marketId;?>&demo=true",
             dataType: "json",
             success: function(data) {
-                $('#openTrades').text("");
-                $('#closedTrades').text("");
-//                $('.balance').text(data.balance);
+                $('#openTrades').find("tr:gt(0)").remove();
+                $('#tradeHistory').find("tr:gt(0)").remove();
                 userBalance = data.demoBalance;
                 $("#demoBalance").html("" + data.demoBalance + " DEMO");
+                var Pairs = ["Undefined", "BTC/ETH", "BTC/LTC", "BTC/NEO", "BTC/XRP",
+                                "ETH/BTC", "ETH/LTC", "ETH/NEO", "ETH/XRP",]
                 for(var i in data.orders){
                     var order = data.orders[i];
                     var tableId = "open";
                     if(order.status == "closed")
                         tableId = "closed";
-                    $('#'+tableId+'Trades').append('<tr class="content-table-sec change-color"> <td class="col-sm-2 no-padd">'+order.amount+'</td> <td class="col-sm-2 no-padd">'+order.totalStake+'</td> <td class="col-sm-2 no-padd">'+order.startPrice+'</td> <td class="col-sm-2 no-padd">'+order.finishPrice+'</td> <td class="col-sm-2 no-padd">'+order.profit+'</td> <td class="col-sm-2 no-padd">'+order.expiry+'</td> </tr>');
+
+                    var profit = 0;
+                    var profitPercentage = 0;
+                    var betStatus = 0;
+                    var tableStyle;
+                    if (order.expiry == 60){
+                        profitPercentage = 1.65;
+                    }else if(order.expiry == 300){
+                        profitPercentage = 1.75;
+                    }else if(order.expiry == 900){
+                        profitPercentage = 1.85;
+                    }
+
+                    if(order.direction == 'up') {
+
+                        if(order.startingrate < marketValue){
+                            profit = order.amount * profitPercentage ;
+                            //winning status = 1
+                            betStatus = 1;
+                            //layout
+                            tableStyle = "winning-table";
+                        } else if (order.startingrate == marketValue){
+                            profit = order.amount;
+                            //tie status = 2
+                            betStatus = 2;
+                            //layout
+                            tableStyle = "tie-table";
+                        }else{
+                            profit = 0;
+                            //losing status = 3
+                            betStatus = 3;
+                            //layout
+                            tableStyle = "losing-table";
+                        }
+                    } else if (order.direction =='down') {
+                        if(order.startingrate > marketValue){
+                            profit = order.amount * profitPercentage ;
+                            //winning status = 1
+                            betStatus = 1;
+                            //layout
+                            tableStyle = "winning-table";
+                        } else if (order.startingrate == marketValue){
+                            profit = order.amount;
+                            //tie status = 2
+                            betStatus = 2;
+                            //layout
+                            tableStyle = "tie-table";
+                        }else{
+                            profit = 0;
+                            //losing status = 3
+                            betStatus = 3;
+                            //layout
+                            tableStyle = "losing-table";
+                        }
+
+                    }
+                    profit = parseFloat(profit);
+
+
+//                    $('#'+tableId+'Trades').append('<tr class="content-table-sec change-color"> <td class="col-sm-2 no-padd">'+order.amount+'</td> <td class="col-sm-2 no-padd">'+order.totalStake+'</td> <td class="col-sm-2 no-padd">'+order.startPrice+'</td> <td class="col-sm-2 no-padd">'+order.finishPrice+'</td> <td class="col-sm-2 no-padd">'+order.profit+'</td> <td class="col-sm-2 no-padd">'+order.expiry+'</td> </tr>');
+                    var tableRow = '<tr class="tr-valign-middle content-table-sec ' + tableStyle + '">';
+                    var arrow = order.direction == "down" ? '<i class="fa fa-caret-down" style="color: #C22D27 !important"></i>'
+                        : '<i class="fa fa-caret-up"  style="color: #207220 !important"></i>';
+                    tableRow = tableRow + '<td class="col-sm-2">' + arrow + 'BTC/ETH</td>';
+                    tableRow = tableRow + '<td class="col-sm-2 no-padd">' + order.amount + ' DEMO</td>';
+                    tableRow = tableRow + '<td class="col-sm-2 no-padd">' + order.startingrate + ' BTC</td>';
+                    tableRow = tableRow + '<td class="col-sm-2 no-padd">' + marketValue + ' BTC</td>';
+                    tableRow = tableRow + '<td class="col-sm-2 no-padd">';
+                    tableRow = tableRow + '<div class="div-countdown">';
+                    tableRow = tableRow + '<div class="div-countdown-number" id="countdown-number">'+order.timeleft+'</div>';
+                    tableRow = tableRow + '<svg><circle id="circle" r="18" cx="20" cy="20" style="animation: countdown ' + order.expiry + 's linear infinite forwards; stroke-dashoffset: '+113 * (1 - order.timeleft / order.expiry)+'"></circle></svg>';
+                    tableRow = tableRow + '</div>';
+                    tableRow = tableRow + '</td>';
+
+                    tableRow = tableRow + '<td class="col-sm-2 no-padd">' + profit.toFixed(8) + ' DEMO</td>'
+                    tableRow = tableRow + '</tr>';
+                    $('#'+tableId+'Trades').append(tableRow);
+                }
+
+                var betStatusRespresentation = ['Notused', 'WIN', 'TIE', "LOSE"]
+
+                for(var i in data.history) {
+                    var archived = data.history[i];
+                    var tableRow = '<tr class="content-table-sec change-color">';
+                    var arrow = '';
+                    if(archived.direction == 'up') {
+                        arrow = '<i class="fa fa-caret-up"></i>';
+                    } else if(archived.direction == 'down') {
+                        arrow = '<i class="fa fa-caret-down"></i>';
+                    }
+                    tableRow = tableRow + '<td class="col-sm-2 no-padd">' + arrow + archived.pair + '</td>';
+                    tableRow = tableRow + '<td class="col-sm-2 no-padd">' + archived.startingdate + '</td>';
+                    tableRow = tableRow + '<td class="col-sm-2 no-padd">' + archived.finishtime + '</td>';
+                    tableRow = tableRow + '<td class="col-sm-2 no-padd">DEMO ' + archived.amount + '</td>';
+                    tableRow = tableRow + '<td class="col-sm-2 no-padd">' + archived.startrate + '</td>';
+                    tableRow = tableRow + '<td class="col-sm-2 no-padd">' + archived.closerate + '</td>';
+                    tableRow = tableRow + '<td class="col-sm-2 no-padd"><p class="text-success">' + betStatusRespresentation[archived.betstatus] + '</p></td>';
+                    tableRow = tableRow + '<td class="col-sm-2 no-padd">' + archived.profit + '</td>';
+                    tableRow = tableRow + '</tr>';
+                    $('#tradeHistory').append(tableRow);
                 }
             }
         });
@@ -1381,18 +1491,72 @@ function myFunction2() {
                         $("#marketArrow").addClass("fa-caret-down");
                     }
                 }
+
+                var allMarkets = ["btc-eth", "btc-ltc", "btc-xrp", "btc-neo",
+                                    "eth-btc", "eth-ltc", "eth-xrp", "eth-neo"];
+
+                for(var i = 0; i < allMarkets.length; i++) {
+                    var market = allMarkets[i];
+                    var old_price = marketValues[market];
+                    marketValues[market] = alldata[market];
+                    $("#price-"+market).html(marketValues[market].toFixed(8));
+                    if (old_price != -1 && old_price != marketValues[market]) {
+                        $("#arrow-"+market).removeClass("fa-caret-up");
+                        $("#arrow-"+market).removeClass("fa-caret-down");
+                        $("#price-"+market).removeClass("text-danger");
+                        $("#price-"+market).removeClass("text-success");
+                        if (marketValues[market] > old_price) {
+                            $("#arrow-"+market).addClass("fa-caret-up");
+                            $("price-"+market).addClass("text-success");
+                        }
+                        else {
+                            $("#arrow-"+market).addClass("fa-caret-down");
+                            $("#price-"+market).addClass("text-danger");
+                        }
+                    }
+                }
             }
         });
     }
 
+
+    // function headerMarkets(){
+    //     $.ajax({
+    //         url: "log/markets.json",
+    //         dataType: "json",
+    //         success: function(allheader){
+    //             var allMarkets = ["btc-eth", "btc-ltc", "btc-xrp", "btc-neo",
+    //                                 "eth-btc", "eth-ltc", "eth-xrp", "eth-neo"];
+    //             var allOldMarkets = [];
+    //             for(i = 0; i < allMarkets.lenght; i++){
+    //                 $("#allMarkets[i]").html("" + allMarkets[i].toFixed(8) + "allMarkets[i]".substr(0,3).toUpperCase());
+    //                 if(allOldMarkets[i] 1= -1 && allOldMarkets[i] != allMarkets[i]) {
+    //                     $("marketArrow" + i).removeClass("fa-caret-up");
+    //                     $("marketArrow" + i).removeClass("fa-caret-down");
+    //                     if(allMarkets[i] > allOldMarkets[i]){
+    //                         $("marketArrow" + i).addClass("fa-caret-up");
+    //                     }else{
+    //                         $("marketArrow" + i).addClass("fa-caret-down");
+    //
+    //                     }
+    //
+    //                 }
+    //
+    //             }
+    //         }
+    //     });
+    // }
+
     function buy() {
+        var result = confirm("Do you want to buy " + $("#amount").val() + "DEMO?");
+        if(!result) return;
         $.ajax({
             url: "ajax/demoBet.php",
             method: "POST",
-            data: "market="+<?=json_encode($_GET['market'])?>+"&amount="+ getNumber($("#amount").val())+"&direction=up"+"&expiry="+expiry,
+            data: "market=<?php echo $marketId;?>&amount="+ getNumber($("#amount").val())+"&direction=up"+"&expiry="+expiry + "&startingrate="+marketValue,
             dataType: "json",
             success: function(data){
-                console.log(data);
+
                 if(!data.status){
                     alert('Error: ' + data.message);
                 } else {
@@ -1408,7 +1572,7 @@ function myFunction2() {
         $.ajax({
             url: "ajax/demoBet.php",
             method: "POST",
-            data: "market="+<?=json_encode($_GET['market'])?>+"&amount="+getNumber($("#amount").val()) + "&direction=down" + "&expiry="+expiry,
+            data: "market=<?php echo $marketId;?>&amount="+getNumber($("#amount").val()) + "&direction=down" + "&expiry="+expiry + "&startingrate="+marketValue,
             dataType: "json",
             success: function (data) {
                 if (!data.status) {
@@ -1437,16 +1601,13 @@ function myFunction2() {
       $(document).ready(function(){
           setInterval(function(){
               userInfoAjax();
-          }, 5000);
+          }, 1000);
 
           setInterval(function() {
               retrieveMarketsAjax();
-          }, 5000);
-
+          }, 1000);
 
           retrieveMarketsAjax();
-
-
 
           userInfoAjax();
 
@@ -1455,6 +1616,11 @@ function myFunction2() {
           });
 
       });
+
+      function percentage_changed(obj) {
+          amount = userBalance * obj.value / 100;
+          document.getElementById('amount').value = "" + amount.toFixed(8);
+      }
 
   </script>
   
@@ -1519,7 +1685,9 @@ $(function(){
 
     var userBalance = 0;
     var marketValue = -1;
-    var expiry = 1;
+    var expiry = 60;
+
+    var marketValues = {'btc-eth':-1, 'btc-ltc':-1, 'btc-neo':-1, 'btc-xrp':-1, 'eth-btc':-1, 'eth-ltc':-1, 'eth-neo':-1, 'eth-xrp':-1};
 
     $(document).ready(function() {
         $('#myCarousel').carousel({
@@ -1535,12 +1703,55 @@ $(function(){
         //     console.log("changed");
         // }, false);
         //
+        $("#amount, input[type=number]").keydown(function (e) {
+            // Allow: backspace, delete, tab, escape, enter and .
+            if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+                // Allow: Ctrl/cmd+A
+                (e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+                // Allow: Ctrl/cmd+C
+                (e.keyCode == 67 && (e.ctrlKey === true || e.metaKey === true)) ||
+                // Allow: Ctrl/cmd+X
+                (e.keyCode == 88 && (e.ctrlKey === true || e.metaKey === true)) ||
+                // Allow: home, end, left, right
+                (e.keyCode >= 35 && e.keyCode <= 39)) {
+                // let it happen, don't do anything
+                return;
+            }
+            // Ensure that it is a number and stop the keypress
+            if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                e.preventDefault();
+            }
+        });
 
-        function makeAjaxChange( elem ) {
-            alert("change");
-            alert(elem.val());
-        }
-
+        $("#expiry-1m").click(function() {
+            expiry = 60;
+            $("#text-payout").html("65%");
+        });
+        $("#expiry-5m").click(function() {
+            expiry = 300;
+            $("#text-payout").html("75%");
+        });
+        $("#expiry-15m").click(function() {
+            expiry = 900;
+            $("#text-payout").html("85%");
+        });
     });
 </script>
 
+<script>
+
+    // var countdownNumberEl = document.getElementById('countdown-number');
+    // var countdown = 100;
+    //
+    // var circle = document.getElementById('circle');
+    //
+    // countdownNumberEl.textContent = countdown;
+
+    // setInterval(function() {
+    //
+    //     countdown = --countdown <= 0 ? 200 : countdown;
+    //     countdownNumberEl.textContent = countdown;
+    // }, 1000);
+
+
+</script>

