@@ -1294,12 +1294,15 @@ function myFunction2() {
                 userBalance = data.demoBalance;
                 $("#demoBalance").html("" + data.demoBalance + " DEMO");
                 var Pairs = ["Undefined", "BTC/ETH", "BTC/LTC", "BTC/NEO", "BTC/XRP",
-                                "ETH/BTC", "ETH/LTC", "ETH/NEO", "ETH/XRP",]
+                                "ETH/BTC", "ETH/LTC", "ETH/NEO", "ETH/XRP",];
+                var marketKeys = ["undefined", "btc-eth", "btc-ltc", "btc-neo", "btc-xrp", "eth-btc", "eth-ltc", "eth-neo", "eth-xrp"];
                 for(var i in data.orders){
                     var order = data.orders[i];
                     var tableId = "open";
                     if(order.status == "closed")
                         tableId = "closed";
+
+                    var currentRate = marketValues[marketKeys[order.marketid]];
 
                     var profit = 0;
                     var profitPercentage = 0;
@@ -1315,13 +1318,13 @@ function myFunction2() {
 
                     if(order.direction == 'up') {
 
-                        if(order.startingrate < marketValue){
+                        if(order.startingrate < currentRate){
                             profit = order.amount * profitPercentage ;
                             //winning status = 1
                             betStatus = 1;
                             //layout
                             tableStyle = "winning-table";
-                        } else if (order.startingrate == marketValue){
+                        } else if (order.startingrate == currentRate){
                             profit = order.amount;
                             //tie status = 2
                             betStatus = 2;
@@ -1335,13 +1338,13 @@ function myFunction2() {
                             tableStyle = "losing-table";
                         }
                     } else if (order.direction =='down') {
-                        if(order.startingrate > marketValue){
+                        if(order.startingrate > currentRate){
                             profit = order.amount * profitPercentage ;
                             //winning status = 1
                             betStatus = 1;
                             //layout
                             tableStyle = "winning-table";
-                        } else if (order.startingrate == marketValue){
+                        } else if (order.startingrate == currentRate){
                             profit = order.amount;
                             //tie status = 2
                             betStatus = 2;
@@ -1366,7 +1369,7 @@ function myFunction2() {
                     tableRow = tableRow + '<td class="col-sm-2">' + arrow + Pairs[order.marketid] + '</td>';
                     tableRow = tableRow + '<td class="col-sm-2 no-padd">' + order.amount + ' DEMO</td>';
                     tableRow = tableRow + '<td class="col-sm-2 no-padd">' + order.startingrate + ' ' + Pairs[order.marketid].substr(0, 3) + '</td>';
-                    tableRow = tableRow + '<td class="col-sm-2 no-padd">' + marketValue + ' ' + Pairs[order.marketid].substr(0, 3) + '</td>';
+                    tableRow = tableRow + '<td class="col-sm-2 no-padd">' + currentRate + ' ' + Pairs[order.marketid].substr(0, 3) + '</td>';
                     tableRow = tableRow + '<td class="col-sm-2 no-padd">';
                     tableRow = tableRow + '<div class="div-countdown">';
                     tableRow = tableRow + '<div class="div-countdown-number" id="countdown-number">'+order.timeleft+'</div>';
