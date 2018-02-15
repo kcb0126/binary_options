@@ -12063,7 +12063,7 @@ STX.Market.Iterator._Clock.prototype.find_prev=null;
 			var url="";
 			var href = location.href;
 			var dir = href.substring(0, href.lastIndexOf('/')) + "/";
-			url = dir + "log/stxBTC-ETH.json";
+			url = dir + log_url;
 			$.ajax({
 				url: url,
 				dataType: "json",
@@ -12086,32 +12086,6 @@ STX.Market.Iterator._Clock.prototype.find_prev=null;
 					cb({quotes: newQuotes, moreAvailable: false, attribution: {source: "chartiq", exchange: "EOD"}});
 				}
 			});
-//			var url="http://demoquotes.whitelabelstockcharts.com/" + symbol;
-//			var url="http://bittrex.com/api/v1.1/public/getmarkethistory?market=BTC-DOGE";
-//			alert(url);
-//                        console.log(response);
-// 			STX.postAjax(url, null, function(status, response){
-//
-//                             console.log(response);
-// 				if(status!=200){
-// 					cb({error:status});
-// 					return;
-// 				}
-// 				var quotes=setQuotes(response);
-// 				var newQuotes=[];
-// 				for(var i=0;i<quotes.length;i++){
-// 					newQuotes[i]={};
-// 					newQuotes[i].Date=quotes[i][0]; // Or set newQuotes[i].DT if you have a JS Date
-// 					newQuotes[i].Open=quotes[i][1];
-// 					newQuotes[i].High=quotes[i][2];
-// 					newQuotes[i].Low=quotes[i][3];
-// 					newQuotes[i].Close=quotes[i][4];
-// 					newQuotes[i].Volume=quotes[i][5];
-// 					newQuotes[i].Adj_Close=quotes[i][6];
-// 				}
-// 				params.noUpdate=true;   //Daily demo quotes do not support updates
-// 				cb({quotes:newQuotes, moreAvailable:false, attribution:{source:"chartiq", exchange:"EOD"}}); // set moreAvailable to true so that the chart will request more when scrolling into the past. Set to false if at the end of data.
-// 			});
 		};
 			
 			

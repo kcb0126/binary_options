@@ -687,7 +687,7 @@ switch (strtoupper($_GET['market'])) {
 
 <div class="col-sm-12 col-xs-12 no-padd timer-bg-box">
 <div class="col-sm-8 col-xs-8 no-padd expire-head">
-  <h4>BTC/ETC</h4>
+  <h4><?=str_replace('-','/',strtoupper($_GET['market']))?></h4>
 </div>
 
 <div class="col-sm-4 col-xs-4 no-padd">
@@ -895,6 +895,10 @@ switch (strtoupper($_GET['market'])) {
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<script>
+    var log_url = "log/stx<?php echo strtoupper($_GET['market']);?>.json";
+</script>
 
 <script src="js/stxThirdParty.js"></script>		<!-- W3C intl support. Use this until browsers have internal support for ECMA-402. -->
 <script src="js/stxTimeZoneData.js"></script>	<!-- Timezone support, JSONP data file -->
@@ -1359,10 +1363,10 @@ function myFunction2() {
                     var tableRow = '<tr class="tr-valign-middle content-table-sec ' + tableStyle + '">';
                     var arrow = order.direction == "down" ? '<i class="fa fa-caret-down" style="color: #C22D27 !important"></i>'
                         : '<i class="fa fa-caret-up"  style="color: #207220 !important"></i>';
-                    tableRow = tableRow + '<td class="col-sm-2">' + arrow + 'BTC/ETH</td>';
+                    tableRow = tableRow + '<td class="col-sm-2">' + arrow + Pairs[order.marketid] + '</td>';
                     tableRow = tableRow + '<td class="col-sm-2 no-padd">' + order.amount + ' DEMO</td>';
-                    tableRow = tableRow + '<td class="col-sm-2 no-padd">' + order.startingrate + ' BTC</td>';
-                    tableRow = tableRow + '<td class="col-sm-2 no-padd">' + marketValue + ' BTC</td>';
+                    tableRow = tableRow + '<td class="col-sm-2 no-padd">' + order.startingrate + ' ' + Pairs[order.marketid].substr(0, 3) + '</td>';
+                    tableRow = tableRow + '<td class="col-sm-2 no-padd">' + marketValue + ' ' + Pairs[order.marketid].substr(0, 3) + '</td>';
                     tableRow = tableRow + '<td class="col-sm-2 no-padd">';
                     tableRow = tableRow + '<div class="div-countdown">';
                     tableRow = tableRow + '<div class="div-countdown-number" id="countdown-number">'+order.timeleft+'</div>';
@@ -1446,34 +1450,6 @@ function myFunction2() {
             }
         });
     }
-
-
-    // function headerMarkets(){
-    //     $.ajax({
-    //         url: "log/markets.json",
-    //         dataType: "json",
-    //         success: function(allheader){
-    //             var allMarkets = ["btc-eth", "btc-ltc", "btc-xrp", "btc-neo",
-    //                                 "eth-btc", "eth-ltc", "eth-xrp", "eth-neo"];
-    //             var allOldMarkets = [];
-    //             for(i = 0; i < allMarkets.lenght; i++){
-    //                 $("#allMarkets[i]").html("" + allMarkets[i].toFixed(8) + "allMarkets[i]".substr(0,3).toUpperCase());
-    //                 if(allOldMarkets[i] 1= -1 && allOldMarkets[i] != allMarkets[i]) {
-    //                     $("marketArrow" + i).removeClass("fa-caret-up");
-    //                     $("marketArrow" + i).removeClass("fa-caret-down");
-    //                     if(allMarkets[i] > allOldMarkets[i]){
-    //                         $("marketArrow" + i).addClass("fa-caret-up");
-    //                     }else{
-    //                         $("marketArrow" + i).addClass("fa-caret-down");
-    //
-    //                     }
-    //
-    //                 }
-    //
-    //             }
-    //         }
-    //     });
-    // }
 
     function buy() {
         var result = confirm("Do you want to buy " + $("#amount").val() + "DEMO?");
