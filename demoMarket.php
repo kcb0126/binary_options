@@ -891,8 +891,6 @@ switch (strtoupper($_GET['market'])) {
 </div>
 <!-- container-fluid -->
 
-</body>
-</html>
 
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -1239,78 +1237,8 @@ switch (strtoupper($_GET['market'])) {
 
     runSampleUI();
 </script>
-<script type="text/javascript">
-
-  $(document).ready(function() {
-  clockUpdate();
-  setInterval(clockUpdate, 1000);
-})
-
-function clockUpdate() {
-  var date = new Date();
-
-  function addZero(x) {
-    if (x < 10) {
-      return x = '0' + x;
-    } else {
-      return x;
-    }
-  }
-
-  function twelveHour(x) {
-    if (x > 12) {
-      return x = x - 12;
-    } else if (x == 0) {
-      return x = 12;
-    } else {
-      return x;
-    }
-  }
-
-  var h = addZero(twelveHour(date.getHours()));
-  var m = addZero(date.getMinutes());
-  // var s = addZero(date.getSeconds());
-
-  $('.digital-clock').text(h + ':' + m)
-}
-
-</script>
-
-
-<script type="text/javascript">
-  $(document).bind("pagecreate", function(event, ui) {
-    $('#slider').siblings('.ui-slider').bind('tap', function(event, ui){ makeAjaxChange($(this).siblings('input')); });
-    $('#slider').siblings('.ui-slider a').bind('taphold', function(event, ui){ makeAjaxChange($(this).parent().siblings('input'));
-});
-
-function makeAjaxChange( elem ) {
-    alert("change");
-    alert(elem.val());
-}
-});
-  
-
-</script>
-
-
-
-
-
-<script type="text/javascript">
-  $(function () {
-      displayChart();
-    });
-
-
-</script>
-
-
 
 <script>
-
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
 
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
@@ -1615,6 +1543,7 @@ function myFunction2() {
               $('.menu-header').slideToggle();
           });
 
+          displayChart();
       });
 
       function percentage_changed(obj) {
@@ -1755,3 +1684,6 @@ $(function(){
 
 
 </script>
+
+</body>
+</html>
